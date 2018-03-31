@@ -1,0 +1,41 @@
+<?php
+
+namespace Myapp\GestionProjetBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Categories
+ *
+ * @ORM\Table(name="categories")
+ * @ORM\Entity(repositoryClass="Myapp\GestionProjetBundle\Repository\CategoriesRepository")
+ */
+class Categories
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+    
+   /**
+   * @ORM\OneToOne(targetEntity="Myapp\GestionProjetBundle\Entity\Media",cascade={"persist","remove"})
+   * @ORM\JoinColumn(nullable=false)
+    */
+   private $image;
+    
+    
+    
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
+
+
+}

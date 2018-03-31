@@ -1,0 +1,45 @@
+FOS\UserBundle\Model\User:
+    type: mappedSuperclass
+    table: user
+    id: {  }
+    fields:
+        username:
+            type: string
+            length: 180
+        usernameCanonical:
+            type: string
+            length: 180
+            unique: true
+            column: username_canonical
+        email:
+            type: string
+            length: 180
+        emailCanonical:
+            type: string
+            length: 180
+            unique: true
+            column: email_canonical
+        enabled:
+            type: boolean
+        salt:
+            type: string
+            nullable: true
+        password:
+            type: string
+        lastLogin:
+            type: datetime
+            nullable: true
+            column: last_login
+        confirmationToken:
+            type: string
+            length: 180
+            unique: true
+            nullable: true
+            column: confirmation_token
+        passwordRequestedAt:
+            type: datetime
+            nullable: true
+            column: password_requested_at
+        roles:
+            type: array
+    lifecycleCallbacks: {  }

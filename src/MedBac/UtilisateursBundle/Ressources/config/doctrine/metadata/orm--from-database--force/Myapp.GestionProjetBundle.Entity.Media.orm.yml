@@ -1,0 +1,16 @@
+Myapp\GestionProjetBundle\Entity\Media:
+    type: entity
+    table: media
+    repositoryClass: Myapp\GestionProjetBundle\Repository\MediaRepository
+    id:
+        id:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            id: true
+            generator:
+                strategy: IDENTITY
+    lifecycleCallbacks: {  }

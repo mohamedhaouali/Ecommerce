@@ -1,0 +1,37 @@
+
+panier:
+    path:     /panier
+    defaults: { _controller: GestionProjetBundle:Panier:panier }   
+    
+ajouter-panier:
+    path:  /ajouter/{id}
+    defaults: { _controller: GestionProjetBundle:Panier:Ajouter }    
+    
+supprimer-panier:
+    path:  /supprimer/{id}
+    defaults: { _controller: GestionProjetBundle:Panier:Supprimer } 
+    
+
+livraison-panier:
+    path:     /panier/livraison
+    defaults: { _controller: GestionProjetBundle:Panier:livraison }
+    
+validation-panier:
+    path:     /panier/validation
+    defaults: { _controller: GestionProjetBundle:Panier:validation }      
+    
+livraisonAdresseSuppression:
+    path:  /livraison/adresse/suppression/{id}
+    defaults: { _controller: GestionProjetBundle:Panier:adresseSuppression } 
+    
+    
+pdf-panier:
+    path:  /export
+    defaults: { _controller: GestionProjetBundle:Panier:export }        
+    
+
+
+   
+     
+     
+     

@@ -1,0 +1,24 @@
+stocksortie_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Stocksortie:index" }
+    methods:  GET
+
+stocksortie_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Stocksortie:show" }
+    methods:  GET
+
+stocksortie_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Stocksortie:new" }
+    methods:  [GET, POST]
+
+stocksortie_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Stocksortie:edit" }
+    methods:  [GET, POST]
+
+stocksortie_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Stocksortie:delete" }
+    methods:  DELETE

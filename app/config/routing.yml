@@ -1,0 +1,31 @@
+gestion_projet:
+    resource: "@GestionProjetBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"   
+    
+produit_admin:
+    resource: "@GestionProjetBundle/Resources/config/routing/routingProduitsAdmin.yml"
+    prefix:   /admin/produit
+    
+Categories_admin:
+    resource: "@GestionProjetBundle/Resources/config/routing/routingCategoriesAdmin.yml"
+    prefix:   /admin/categorie  
+    
+routingUtilisateursAdmin:
+    resource: "@UtilisateursBundle/Resources/config/routing/routingUtilisateursAdmin.yml"
+    prefix: /admin/utilisateur   
+    
+stockentree:
+    resource: "@GestionProjetBundle/Resources/config/routing/stockentree.yml"
+    prefix:   /admin/stockentree
+    
+stocksortie:
+    resource: "@GestionProjetBundle/Resources/config/routing/stocksortie.yml"
+    prefix:   /admin/stocksortie  
+    
+#fos_js_routing
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"    

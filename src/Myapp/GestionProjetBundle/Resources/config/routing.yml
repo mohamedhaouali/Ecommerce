@@ -1,0 +1,31 @@
+routingPanier:
+    resource: "@GestionProjetBundle/Resources/config/routing/routingPanier.yml"
+    prefix: /
+
+routingProduits:
+    resource: "@GestionProjetBundle/Resources/config/routing/routingProduits.yml"
+    prefix: /
+
+routingCommandes:
+    resource: "@GestionProjetBundle/Resources/config/routing/routingCommandes.yml"
+    prefix: /    
+
+routingProduitsAdmin:
+    resource: "@GestionProjetBundle/Resources/config/routing/routingProduitsAdmin.yml"
+    prefix: /    
+    
+routingCategoriesAdmin:
+    resource: "@GestionProjetBundle/Resources/config/routing/routingCategoriesAdmin.yml"
+    prefix:   /  
+    
+routingCommandesAdmin:
+    resource: "@GestionProjetBundle/Resources/config/routing/routingCommandesAdmin.yml"
+    prefix: /commande
+    
+routingAdmin:
+    resource: "@GestionProjetBundle/Resources/config/routing/routingAdmin.yml"
+    prefix: /admin  
+    
+
+    
+  

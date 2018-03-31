@@ -1,0 +1,24 @@
+stockentree_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:StockEntree:index" }
+    methods:  GET
+
+stockentree_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:StockEntree:show" }
+    methods:  GET
+
+stockentree_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:StockEntree:new" }
+    methods:  [GET, POST]
+
+stockentree_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:StockEntree:edit" }
+    methods:  [GET, POST]
+
+stockentree_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:StockEntree:delete" }
+    methods:  DELETE

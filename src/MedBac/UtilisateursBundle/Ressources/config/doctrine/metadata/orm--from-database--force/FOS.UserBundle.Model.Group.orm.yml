@@ -1,0 +1,12 @@
+FOS\UserBundle\Model\Group:
+    type: mappedSuperclass
+    table: group
+    id: {  }
+    fields:
+        name:
+            type: string
+            length: 180
+            unique: true
+        roles:
+            type: array
+    lifecycleCallbacks: {  }

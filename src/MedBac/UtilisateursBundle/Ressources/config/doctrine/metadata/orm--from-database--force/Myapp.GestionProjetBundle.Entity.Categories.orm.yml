@@ -1,0 +1,24 @@
+Myapp\GestionProjetBundle\Entity\Categories:
+    type: entity
+    table: categories
+    repositoryClass: Myapp\GestionProjetBundle\Repository\CategoriesRepository
+    id:
+        id:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        nom:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+    lifecycleCallbacks: {  }

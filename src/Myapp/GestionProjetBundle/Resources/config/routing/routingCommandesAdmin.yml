@@ -1,0 +1,7 @@
+adminCommande:
+    path:  /
+    defaults: { _controller: GestionProjetBundle:CommandesAdmin:commandes }
+
+adminShowFacture:
+    path:  /facture/{id}
+    defaults: { _controller: GestionProjetBundle:CommandesAdmin:showFacture }

@@ -1,0 +1,111 @@
+{% extends '::base.html.twig'%}
+
+
+{% block body %}
+    
+
+
+    <div class="span9">
+
+        <h2>Facture</h2>
+        <form>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>Références</th>
+                    <th>Quantité</th>
+                    <th>Prix unitaire</th>
+                    <th>Total HT</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for produit in cmd.commande.produit %}
+                    <tr>
+                        <td>{{ produit.reference }}</td>
+                        <td> {{ produit.quantite }} </td>
+                        <td>{{ produit.prixHT }} DT</td>
+                        <td>{{ produit.prixHT * produit.quantite }} DT</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        </form>
+
+        <table class="table table-striped table-hover span2 pull-right">
+            <tbody>
+            <tr>
+                <th>Total HT</th>
+                <td>{{ cmd.commande.prixHT }}DT</td>
+            </tr>
+
+            <tr>
+                <th>Total TTC</th>
+                <td>{{ cmd.commande.prixTTC-0.09 }}DT</td>
+            </tr>
+
+            <tr>
+                <th>Timbre</th>
+                <td>{{ 0.600 }}DT</td>
+            </tr>
+            
+            <tr>
+                <th>Net a payer</th>
+                <td>{{ cmd.commande.prixTTC+0.51 }}DT</td>
+            </tr>
+            
+        </table>
+
+        <br>
+
+        <div class="span3 pull-left">
+            <h4>Adresse de livraison</h4>
+            <dl class="">
+                <dt>{{ cmd.commande.livraison.nom }} {{ cmd.commande.livraison.prenom }}</dt>
+                <dt>{{ cmd.commande.livraison.adresse }} </dt>
+                <dt>{{ cmd.commande.livraison.matriculefiscale }} </dt>
+                <dt>{{ cmd.commande.livraison.bonducommande }} </dt>
+                <dt>{{ cmd.commande.livraison.telephone }} </dt>
+                <dt>{{ cmd.commande.livraison.codepostal }} {{ cmd.commande.livraison.ville }} {{ cmd.commande.livraison.pays }}</dt>
+
+            </dl>
+        </div>
+
+        <div class="span3 pull-left">
+            <h4>Adresse de facturation</h4>
+            <dl class="">
+                <dt>{{ cmd.commande.facturation.nom }} {{ cmd.commande.facturation.prenom }}</dt>
+                <dt>{{ cmd.commande.facturation.adresse }} </dt>
+                <dt>{{ cmd.commande.livraison.matriculefiscale }} </dt>
+                <dt>{{ cmd.commande.livraison.bonducommande }} </dt>
+                <dt>{{ cmd.commande.livraison.telephone }} </dt>
+                <dt>{{ cmd.commande.facturation.codepostal }} {{ cmd.commande.facturation.ville }} {{ cmd.commande.facturation.pays }}</dt>
+
+            </dl>
+        </div>
+
+<a href="javascript:window.print()"><button>Imprimer</button></a>
+	
+<a href="{{'validation-panier'}}" onclick="$('SelectorToPrint').printElement();"></a>
+
+        <div class="clearfix"></div>
+
+        <form action="{{ path('validationCommande', { 'id' : cmd.id }) }}" method="post" >
+            <input name="token" type="hidden" value="{{ cmd.commande.token }}" />
+            <input name="prix" type="hidden" value="{{ cmd.commande.prixTTC }}" />
+            <input name="date" type="hidden" value="{{ cmd.date|date('dmyhms') }}" />
+            <button type="submit" class="btn btn-success pull-right">Payer</button>
+        </form>
+            
+        <a href="{{ path('livraison-panier') }}" class="btn btn-primary">Retour</a>
+
+ 
+
+
+
+
+
+    </div>
+
+{% endblock %}

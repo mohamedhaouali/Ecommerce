@@ -1,0 +1,45 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Stockentrees list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomduproduit</th>
+                <th>Quantite</th>
+                <th>Prix</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stockEntree in stockEntrees %}
+            <tr>
+                <td><a href="{{ path('stockentree_show', { 'id': stockEntree.id }) }}">{{ stockEntree.id }}</a></td>
+                <td>{{ stockEntree.nomduproduit }}</td>
+                <td>{{ stockEntree.quantite }}</td>
+                <td>{{ stockEntree.prix }}</td>
+                <td>{% if stockEntree.date %}{{ stockEntree.date|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('stockentree_show', { 'id': stockEntree.id }) }}"class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('stockentree_edit', { 'id': stockEntree.id }) }}"class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('stockentree_new') }}" class="btn btn-success">Ajout d'un nouveaux stockEntree</a>
+        </li>
+    </ul>
+{% endblock %}

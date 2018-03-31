@@ -1,0 +1,25 @@
+adminProduits_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:ProduitsAdmin:index" }
+    methods:  GET
+
+adminProduits_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:ProduitsAdmin:show" }
+    methods:  GET
+
+adminProduits_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:ProduitsAdmin:new" }
+    methods:  [GET, POST]
+
+adminProduits_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:ProduitsAdmin:edit" }
+    methods:  [GET, POST]
+
+adminProduits_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:ProduitsAdmin:delete" }
+    methods:  DELETE
+

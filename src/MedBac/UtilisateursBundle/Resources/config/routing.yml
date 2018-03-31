@@ -1,0 +1,25 @@
+utilisateurs_homepage:
+    path:     /
+    defaults: { _controller: UtilisateursBundle:Default:index }
+
+utilisateurs:
+    resource: "@UtilisateursBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"  
+    
+factures:
+    path:    /profile/factures
+    defaults: { _controller: UtilisateursBundle:Utilisateurs:factures }
+
+facturePDF:
+    path:    /profile/factures/PDF/{id}
+    defaults: { _controller: UtilisateursBundle:Utilisateurs:facturePDF } 
+    
+villes:
+    path:    /villes/{codepostal}
+    defaults: { _controller: UtilisateursBundle:Utilisateurs:villes } 
+    options:
+        expose: false
