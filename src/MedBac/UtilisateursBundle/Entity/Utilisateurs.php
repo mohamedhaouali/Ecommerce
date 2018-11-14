@@ -6,6 +6,7 @@ namespace  MedBac\UtilisateursBundle\Entity;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
+
 /**
  * @ORM\Entity(repositoryClass="MedBac\UtilisateursBundle\Repository\UtilisateursRepository")
  * @ORM\Table(name="utilisateurs")
@@ -42,6 +43,9 @@ class Utilisateurs extends BaseUser
    private $adresses;
     
 
+    
+    
+    
     /**
      * Add commande
      *
@@ -109,4 +113,6 @@ class Utilisateurs extends BaseUser
     {
         return $this->adresses;
     }
+
+  
 }

@@ -44,7 +44,7 @@ class CommandesController extends Controller
         foreach($produits as $produit)
         {
             $prixHT = ($produit->getPrix() * $panier[$produit->getId()]);
-            $prixTTC = ($produit->getPrix() * $panier[$produit->getId()] / $produit->getTva()->getMultiplcate()+0.09);
+            $prixTTC = ($produit->getPrix() * $panier[$produit->getId()] / $produit->getTva()->getMultiplcate());
             $totalHT += $prixHT;
 // creer tableaux tva
       //a l'interieur on va stocker la valeur Tva
@@ -69,7 +69,7 @@ class CommandesController extends Controller
                                                             'quantite' => $panier[$produit->getId()],
                                                             // round($produit->getPrix(), 2), 
                                                            // 2 chiffres apres la virgule
-                                                            'prixHT' => round($produit->getPrix(),2),
+                                                            'prixHT' => round($produit->getPrix(),3),
                                                             'prixTTC' => round($produit->getPrix() / $produit->getTva()->getMultiplcate(),3));
         }
 // on va creer tableaux livraison

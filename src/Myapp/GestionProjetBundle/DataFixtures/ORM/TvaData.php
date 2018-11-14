@@ -25,7 +25,7 @@ class TvaData extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($tva1);
 
         $tva2 = new Tva();
-        $tva2->setMultiplcate('0.840');
+        $tva2->setMultiplcate('0.8151');
         $tva2->setNom('TVA 19%');
         $tva2->setValeur('19');
         $manager->persist($tva2);

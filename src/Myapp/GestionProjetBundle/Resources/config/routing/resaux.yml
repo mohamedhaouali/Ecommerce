@@ -1,0 +1,28 @@
+resaux_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Resaux:index" }
+    methods:  GET
+
+resaux_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Resaux:show" }
+    methods:  GET
+
+resaux_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Resaux:new" }
+    methods:  [GET, POST]
+
+resaux_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Resaux:edit" }
+    methods:  [GET, POST]
+
+resaux_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Resaux:delete" }
+    methods:  DELETE
+
+resaux_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Resaux:modifier" }

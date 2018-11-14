@@ -1,0 +1,30 @@
+papier_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Papier:index" }
+    methods:  GET
+
+papier_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Papier:show" }
+    methods:  GET
+
+papier_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Papier:new" }
+    methods:  [GET, POST]
+
+papier_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Papier:edit" }
+    methods:  [GET, POST]
+
+papier_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Papier:delete" }
+    methods:  DELETE
+    
+papier_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Papier:modifier" }
+    
+    

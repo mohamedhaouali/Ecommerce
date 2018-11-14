@@ -1,0 +1,28 @@
+destockage_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Destockage:index" }
+    methods:  GET
+
+destockage_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Destockage:show" }
+    methods:  GET
+
+destockage_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Destockage:new" }
+    methods:  [GET, POST]
+
+destockage_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Destockage:edit" }
+    methods:  [GET, POST]
+
+destockage_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Destockage:delete" }
+    methods:  DELETE
+
+destockage_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Destockage:modifier" } 

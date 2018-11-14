@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                {% include '::modulesUsed/navigation.html.twig' %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}
+                {% else %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}
+                {% endif %}
+                {{ render(controller('GestionProjetBundle:Panier:menu')) }}
+            </div>
+   
+  <div class="span9">
+                
+                    <ul class="thumbnails">
+                  {% for accessoiresTelephone in accessoiresTelephones %}
+                            <li class="span3">
+                                <div class="thumbnail">
+                                    <img src="{{asset('uploads/'~accessoiresTelephone.path)}}" alt="DevAndClick" width="300" height="300">
+
+                                    <div class="caption">
+                                        <h4>{{accessoiresTelephone.titre}}</h4>
+
+                                        <p>{{accessoiresTelephone.description}}</p>
+                                        <p>Prix : {{accessoiresTelephone.prix}}DT</p>
+                                        <p>{% if accessoiresTelephone.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</p>
+                                        
+
+                                      
+
+                                    </div>
+                                </div>
+                            </li>
+                        {%endfor%}
+                    </ul>
+                       <div class="navigation">
+    {{ knp_pagination_render(accessoiresTelephones) }}
+</div>  
+                </div>   
+
+
+   
+
+        </div>
+                    
+ 
+    </div>
+
+</div>
+
+
+{% endblock %}
+        
+            
+               
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

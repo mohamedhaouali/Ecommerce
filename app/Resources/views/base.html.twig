@@ -24,28 +24,125 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    
-                   
                          <ul class="nav navbar-nav">
                        <li>       
                       <img src="{{asset('img/logo.png')}}" >  
                        </li>
-                    
                     <li>
                         <a href="{{path('gestion_projet_homepage')}}">Accueil</a>
                     </li>
+                   
                     <li>
-                        <a href="{{path('panier')}}">Panier</a>
+                       <a href="{{path('produit_recherche')}}">Recherche</a>
                     </li>
                     
-                </ul>
-               
-           
+                     <li>
+                         <a href="{{path('panier')}}">Panier</a>
+                    </li>
                     
-   <div class="nav-collapse collapse">
-                        {{ render(controller('GestionProjetBundle:Produits:recherche')) }}
+                     <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Informatique</span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{ path('stockage_index') }}">Stockage</a>
+                                            </li>
+                                            
+                                              <li>
+                                                <a href="{{ path('ordinateurportable_index') }}">Ordinateur portable</a>
+                                            </li>
+                                            
+                                               <li>
+                                                <a href="{{ path('ordinateurdebureau_index') }}">Ordinateur de bureau</a>
+                                            </li>
+                                            
+                                            
+                                            <li>
+                                                <a href="{{ path('sac_index') }}">Sac Scolaires et trousses</a>
+                                            </li>
+                                            
+                                          
+                                            
+                                             <li>
+                                                <a href="{{ path('composantinformatique_index') }}">Composent informatique</a>
+                                            </li>
+                                            
+                                            <li>
+                                                <a href="{{ path('tablette_index') }}">Tablette</a>
+                                            </li>  
+                                           
+
+                                        </ul>  <!-- end of /.dropdown-menu -->
+                                    </li> <!-- end of /.dropdown -->
+                    
+               
+                                    
+                               <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Impression</span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{ path('imprimante_index') }}">Imprimante</a>
+                                            </li>
+                                               
+                                              <li>
+                                                <a href="{{ path('cartouchesimprimante_index') }}">Consommables</a>
+                                            </li>
+                                            
+                                             <li>
                      
-                </div>
+                                                <a href="{{ path('accessoiresimprimante_index') }}"> Accessoires Imprimantes</a>
+                                            </li>
+                                            
+                                            
+                                           
+                                            
+                                            <li>
+                                                <a href="{{ path('photocopieur_index') }}">Photocopieurs</a>
+                                            </li>
+                                            
+                                               <li>
+                                                <a href="{{ path('scanner_index') }}">Scanner</a>
+                                            </li>
+
+                                        </ul>  <!-- end of /.dropdown-menu -->
+                                    </li> <!-- end of /.dropdown -->    
+                        
+                                    
+                               <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Bureautique</span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{ path('photocopieur_index') }}">Photocopieurs</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="{{ path('papier_index') }}">Papier</a>
+                                            </li>
+                                            
+                                               <li>
+                                                <a href="{{ path('classementetarchivage_index') }}">Classement et Archivage</a>
+                                            </li>
+                                            
+                                            <li>
+                                                <a href="{{ path('fournituredubureau_index') }}">Fourniture du bureau</a>
+                                            </li>
+                                            
+                                            <li>
+                                                <a href="{{ path('tableaux_index') }}">Tableaux</a>
+                                            </li>
+
+                                        </ul>  <!-- end of /.dropdown-menu -->
+                                    </li> <!-- end of /.dropdown -->                   
+              
+                     <li>
+                         <a href="{{path('destockage_index')}}">Destockage</a>
+                    </li>
+                               
+
+                    
+                </ul>
+             
+           
+
               <div class="nav-collapse collapse">
                 <div class="navbar-text pull-right">
                      |

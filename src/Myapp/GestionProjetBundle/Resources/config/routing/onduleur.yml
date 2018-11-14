@@ -1,0 +1,28 @@
+onduleur_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Onduleur:index" }
+    methods:  GET
+
+onduleur_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Onduleur:show" }
+    methods:  GET
+
+onduleur_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Onduleur:new" }
+    methods:  [GET, POST]
+
+onduleur_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Onduleur:edit" }
+    methods:  [GET, POST]
+
+onduleur_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Onduleur:delete" }
+    methods:  DELETE
+
+onduleur_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Onduleur:modifier" }  

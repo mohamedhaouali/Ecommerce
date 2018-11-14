@@ -1,0 +1,21 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Photocopieur edit</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" class="btn btn-success" value="Modifier" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('photocopieur_modifier') }}"class="btn btn-info">Retour a la page Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+               <input type="submit" class="btn btn-danger" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

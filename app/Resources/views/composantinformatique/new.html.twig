@@ -1,0 +1,16 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Composant informatique creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" class="btn btn-success" value="Ajouter" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('composantinformatique_modifier') }}"> <input type="submit" class="btn btn-info" value="Retour a la page Modifier" /> </a>
+        </li>
+    </ul>
+{% endblock %}

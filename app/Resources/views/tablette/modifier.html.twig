@@ -1,0 +1,50 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>tablette list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Tva</th>
+                <th>Disponible</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+     {% for tablette in tablettes %}
+            <tr>
+                <td><a href="{{ path('tablette_show', { 'id': tablette.id }) }}">{{ tablette.id }}</a></td>
+                <td>{{ tablette.titre }}</td>
+                <td>{{ tablette.description }}</td>
+                <td>{{ tablette.prix }}</td>
+                 <td>{{ tablette.tva }}</td>
+                <td>{% if tablette.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+                <td>  <img src="{{asset('uploads/'~tablette.path)}}" alt="DevAndClick" width="300" height="300"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tablette_show', { 'id':tablette.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tablette_edit', { 'id':tablette.id }) }}" class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tablette_new') }}" class="btn btn-success">Ajout d'une nouvelle tablette</a>
+        </li>
+    </ul>
+{% endblock %}
+

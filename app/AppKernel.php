@@ -15,20 +15,22 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-	    new FOS\UserBundle\FOSUserBundle(),
+	        new FOS\UserBundle\FOSUserBundle(),
             new Myapp\GestionProjetBundle\GestionProjetBundle(),
             new MedBac\UtilisateursBundle\UtilisateursBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new Ensepar\Html2pdfBundle\EnseparHtml2pdfBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-            new Symfony\Bundle\AsseticBundle\AsseticBundle,
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
+            
 
             if ('dev' === $this->getEnvironment()) {
                 $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();

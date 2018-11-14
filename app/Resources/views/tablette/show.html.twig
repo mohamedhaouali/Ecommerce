@@ -1,0 +1,52 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Tablette</h1>
+
+    <table class="table table-striped table-hover">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tablette.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ tablette.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ tablette.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ tablette.prix }}</td>
+            </tr>
+            <tr>
+                <th>Disponible</th>
+                <td>{% if tablette.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+            </tr>
+            
+            <tr>
+                <th>Tva</th>
+                <td>{{ tablette.tva }}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tablette_modifier') }}" class="btn btn-info">Retour a la page Modifier</a>
+        </li>
+        <li>
+            <a href="{{ path('tablette_edit', { 'id': tablette.id }) }}" class="btn btn-success">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                
+                
+                 <input type="submit"  class="btn btn-danger" value="Supprimer" />
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

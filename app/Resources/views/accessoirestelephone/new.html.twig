@@ -1,0 +1,16 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Accessoires telephone creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" class="btn btn-success" value="Ajouter" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('accessoirestelephone_modifier') }}" class="btn btn-info">Retour a la page Modifier</a>
+        </li>
+    </ul>
+{% endblock %}

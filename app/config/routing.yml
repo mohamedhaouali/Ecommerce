@@ -1,7 +1,7 @@
 gestion_projet:
     resource: "@GestionProjetBundle/Resources/config/routing.yml"
     prefix:   /
-
+       
 # app/config/routing.yml
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"   
@@ -24,8 +24,112 @@ stockentree:
     
 stocksortie:
     resource: "@GestionProjetBundle/Resources/config/routing/stocksortie.yml"
-    prefix:   /admin/stocksortie  
+    prefix:   /admin/stocksortie 
+    
+  
     
 #fos_js_routing
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"    
+     
+    
+Papier:
+    resource: "@GestionProjetBundle/Resources/config/routing/papier.yml"
+    prefix:   /papier
+    
+fournituredubureau:
+    resource: "@GestionProjetBundle/Resources/config/routing/fournituredubureau.yml"
+    prefix:   /fournituredubureau    
+    
+classementetarchivage:
+    resource: "@GestionProjetBundle/Resources/config/routing/classementetarchivage.yml"
+    prefix:   /classementetarchivage 
+    
+Stockage:
+    resource: "@GestionProjetBundle/Resources/config/routing/stockage.yml"
+    prefix:  /stockage   
+    
+Imprimante:
+    resource: "@GestionProjetBundle/Resources/config/routing/imprimante.yml"
+    prefix:   /imprimante 
+    
+Onduleur:
+    resource: "@GestionProjetBundle/Resources/config/routing/onduleur.yml"
+    prefix:   /onduleur   
+    
+resaux:
+    resource: "@GestionProjetBundle/Resources/config/routing/resaux.yml"
+    prefix:   /resaux     
+    
+Logiciels:
+    resource: "@GestionProjetBundle/Resources/config/routing/logiciels.yml"
+    prefix:   /logiciels 
+    
+videosurveillance:
+    resource: "@GestionProjetBundle/Resources/config/routing/videosurveillance.yml"
+    prefix:   /videosurveillance     
+    
+appareilfax:
+    resource: "@GestionProjetBundle/Resources/config/routing/appareilfax.yml"
+    prefix:   /appareilfax    
+  
+Photocopieur:
+    resource: "@GestionProjetBundle/Resources/config/routing/photocopieur.yml"
+    prefix:   /photocopieur     
+    
+ordinateurportable:
+    resource: "@GestionProjetBundle/Resources/config/routing/ordinateurportable.yml"
+    prefix:   /ordinateurportable
+    
+cartoucheimprimante:
+    resource: "@GestionProjetBundle/Resources/config/routing/cartouchesimprimante.yml"
+    prefix:   /cartouchesimprimante 
+    
+composontinformatique:
+    resource: "@GestionProjetBundle/Resources/config/routing/composantinformatique.yml"
+    prefix:   /composantinformatique     
+    
+ordinateurdebureau:
+    resource: "@GestionProjetBundle/Resources/config/routing/ordinateurdebureau.yml"
+    prefix:   /ordinateurdebureau    
+    
+tablette:
+     resource: "@GestionProjetBundle/Resources/config/routing/tablette.yml"
+     prefix:   /tablette    
+     
+telephonefixe:
+     resource: "@GestionProjetBundle/Resources/config/routing/telephonefixe.yml"
+     prefix:   /telephonefixe 
+     
+accessoirestelephone:
+     resource: "@GestionProjetBundle/Resources/config/routing/accessoirestelephone.yml"
+     prefix:   /accessoirestelephone  
+     
+destockage:
+     resource: "@GestionProjetBundle/Resources/config/routing/destockage.yml"
+     prefix:   /destockage  
+     
+sac:
+     resource: "@GestionProjetBundle/Resources/config/routing/sac.yml"
+     prefix:   /sac  
+     
+tableaux:
+      resource: "@GestionProjetBundle/Resources/config/routing/tableaux.yml"
+      prefix:   /tableaux     
+      
+accessoiresimprimante:
+        resource: "@GestionProjetBundle/Resources/config/routing/accessoiresimprimante.yml"
+        prefix:   /accessoiresimprimante  
+        
+disquedurexterne:
+        resource: "@GestionProjetBundle/Resources/config/routing/disquedurexterne.yml"
+        prefix:   /disquedurexterne  
+              
+cd:
+        resource: "@GestionProjetBundle/Resources/config/routing/cd.yml"
+        prefix:   /cd    
+        
+cartememoire:
+        resource: "@GestionProjetBundle/Resources/config/routing/cartememoire.yml"
+        prefix:   /cartememoire        
+        

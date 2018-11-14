@@ -23,3 +23,6 @@ adminProduits_delete:
     defaults: { _controller: "GestionProjetBundle:ProduitsAdmin:delete" }
     methods:  DELETE
 
+adminProduits_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:ProduitsAdmin:modifier" } 

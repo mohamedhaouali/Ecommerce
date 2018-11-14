@@ -1,0 +1,51 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>videosurveillance list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Tva</th>
+                <th>Disponible</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+     {% for videosurveillance in videosurveillances %}
+            <tr>
+                <td><a href="{{ path('videosurveillance_show', { 'id': videosurveillance.id }) }}">{{ videosurveillance.id }}</a></td>
+                <td>{{ videosurveillance.titre }}</td>
+                <td>{{ videosurveillance.description }}</td>
+                <td>{{ videosurveillance.prix }}</td>
+                <td>{{ videosurveillance.tva }}</td>
+                <td>{% if videosurveillance.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+                <td>  <img src="{{asset('uploads/'~videosurveillance.path)}}" alt="DevAndClick" width="300" height="300"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('videosurveillance_show', { 'id':videosurveillance.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('videosurveillance_edit', { 'id':videosurveillance.id }) }}" class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('videosurveillance_new') }}" class="btn btn-success">Ajout d'un nouveaux videosurveillance</a>
+        </li>
+    </ul>
+{% endblock %}
+
+

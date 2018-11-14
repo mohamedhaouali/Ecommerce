@@ -1,0 +1,28 @@
+tableaux_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:tableaux:index" }
+    methods:  GET
+
+tableaux_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:tableaux:show" }
+    methods:  GET
+
+tableaux_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:tableaux:new" }
+    methods:  [GET, POST]
+
+tableaux_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:tableaux:edit" }
+    methods:  [GET, POST]
+
+tableaux_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:tableaux:delete" }
+    methods:  DELETE
+
+tableaux_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:tableaux:modifier" }    

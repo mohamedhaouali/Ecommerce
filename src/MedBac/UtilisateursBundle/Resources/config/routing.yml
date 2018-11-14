@@ -23,3 +23,11 @@ villes:
     defaults: { _controller: UtilisateursBundle:Utilisateurs:villes } 
     options:
         expose: false
+        
+homepage:
+    path:    /homepage
+    defaults: { _controller: UtilisateursBundle:Default:index } 
+    
+test:
+    path:    /test
+    defaults: { _controller: UtilisateursBundle:Default:test }      

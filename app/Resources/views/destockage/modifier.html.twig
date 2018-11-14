@@ -1,0 +1,53 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Destockage list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix initial</th>
+                <th>Prix apres remise </th>
+                <th>Tva</th>
+                <th>Disponible</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for destockage in destockages %}
+    
+            <tr>
+                <td><a href="{{ path('destockage_show', { 'id': destockage.id }) }}">{{ destockage.id }}</a></td>
+                <td>{{ destockage.titre }}</td>
+                <td>{{ destockage.description }}</td>
+                <td>{{ destockage.prix }}</td>
+                <td>{{ destockage.prix1 }}</td>
+                 <td>{{ destockage.tva }}</td>
+                <td>{% if destockage.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+                <td>  <img src="{{asset('uploads/'~destockage.path)}}" alt="DevAndClick" width="300" height="300"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('destockage_show', { 'id':destockage.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('destockage_edit', { 'id':destockage.id }) }}" class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('destockage_new') }}" class="btn btn-success">Ajout d'un nouveaux destockage</a>
+        </li>
+    </ul>
+{% endblock %}
+

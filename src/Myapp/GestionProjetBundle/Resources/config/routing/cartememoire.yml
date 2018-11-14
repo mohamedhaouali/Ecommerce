@@ -1,0 +1,28 @@
+cartememoire_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Cartememoire:index" }
+    methods:  GET
+
+cartememoire_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Cartememoire:show" }
+    methods:  GET
+
+cartememoire_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Cartememoire:new" }
+    methods:  [GET, POST]
+
+cartememoire_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Cartememoire:edit" }
+    methods:  [GET, POST]
+
+cartememoire_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Cartememoire:delete" }
+    methods:  DELETE
+
+cartememoire_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Cartememoire:modifier" } 

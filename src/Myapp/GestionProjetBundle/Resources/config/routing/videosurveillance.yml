@@ -1,0 +1,28 @@
+videosurveillance_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:videosurveillance:index" }
+    methods:  GET
+
+videosurveillance_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:videosurveillance:show" }
+    methods:  GET
+
+videosurveillance_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:videosurveillance:new" }
+    methods:  [GET, POST]
+
+videosurveillance_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:videosurveillance:edit" }
+    methods:  [GET, POST]
+
+videosurveillance_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:videosurveillance:delete" }
+    methods:  DELETE
+
+videosurveillance_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:videosurveillance:modifier" }    

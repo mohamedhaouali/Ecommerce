@@ -6,6 +6,8 @@ use Myapp\GestionProjetBundle\Entity\Produits;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 use Myapp\GestionProjetBundle\Form\ProduitsType;
 /**
@@ -18,7 +20,7 @@ class ProduitsAdminController extends Controller
      * Lists all produit entities.
      *
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -42,11 +44,12 @@ class ProduitsAdminController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             
-            $produit->upload();
             $em->persist($produit);
+             $produit->upload();
+            
             $em->flush();
 
-            return $this->redirectToRoute('adminProduits_show', array('id' => $produit->getId()));
+            return $this->redirectToRoute('adminProduits_index', array('id' => $produit->getId()));
         }
 
         return $this->render('GestionProjetBundle:Administration:Produits/layout/new.html.twig', array(
@@ -80,8 +83,9 @@ class ProduitsAdminController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-              $produit->upload();
+           $em = $this->getDoctrine()->getManager();
+           $produit->upload();
+           $em->flush();
             return $this->redirectToRoute('adminProduits_edit', array('id' => $produit->getId()));
         }
 
@@ -125,4 +129,16 @@ class ProduitsAdminController extends Controller
             ->getForm()
         ;
     }
+    
+    
+    public function modifierAction() {
+        $em = $this->getDoctrine()->getManager();
+
+        $produits = $em->getRepository('GestionProjetBundle:Produits')->findAll();
+
+        return $this->render('GestionProjetBundle:Administration:Produits/layout/modifier.html.twig', array(
+                    'produits' => $produits,
+        ));    } 
+    
+    
 }

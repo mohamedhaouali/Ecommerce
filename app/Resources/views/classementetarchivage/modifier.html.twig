@@ -1,0 +1,52 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>classement et archivage list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Tva</th>
+                <th>Disponible</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+      {% for classementetarchivage in classementetarchivages %}
+            <tr>
+                <td><a href="{{ path('classementetarchivage_show', { 'id': classementetarchivage.id }) }}">{{ classementetarchivage.id }}</a></td>
+                <td>{{ classementetarchivage.titre }}</td>
+                <td>{{ classementetarchivage.description }}</td>
+                <td>{{ classementetarchivage.prix }}</td>
+                <td>{{ classementetarchivage.tva }}</td>
+                <td>{% if classementetarchivage.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+                <td>  <img src="{{asset('uploads/'~classementetarchivage.path)}}" alt="DevAndClick" width="300" height="300"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('classementetarchivage_show', { 'id': classementetarchivage.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('classementetarchivage_edit', { 'id':classementetarchivage.id }) }}" class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('classementetarchivage_new') }}" class="btn btn-success">Ajout d'un nouveaux classement et archivage</a>
+        </li>
+    </ul>
+{% endblock %}
+
+
+

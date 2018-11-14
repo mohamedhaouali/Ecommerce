@@ -1,0 +1,28 @@
+fournituredubureau_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Fournituredubureau:index" }
+    methods:  GET
+
+fournituredubureau_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Fournituredubureau:show" }
+    methods:  GET
+
+fournituredubureau_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Fournituredubureau:new" }
+    methods:  [GET, POST]
+
+fournituredubureau_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Fournituredubureau:edit" }
+    methods:  [GET, POST]
+
+fournituredubureau_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Fournituredubureau:delete" }
+    methods:  DELETE
+
+fournituredubureau_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Fournituredubureau:modifier" }

@@ -38,7 +38,7 @@ class ProduitsController extends Controller
   $produits =  $this->get('knp_paginator')->paginate(
             $findProduits, /* query NOT result */
             $request->query->getInt('page', 1)/*page number*/,
-           5/*limit per page*/
+           20/*limit per page*/
         );
       
     
@@ -86,5 +86,26 @@ $produits =  $this->get('knp_paginator')->paginate(
             5/*limit per page*/
         );
         return $this->render('GestionProjetBundle:Default:produits/layout/produits.html.twig', array('produits' => $produits));
-    }        
+    } 
+    
+ public function recherche1Action(Request $request)
+        
+            {
+       $em = $this->getDoctrine()->getManager();
+       $produits=$em->getRepository("GestionProjetBundle:Produits")->findAll();// afficher tous les modeles
+       if($request->isMethod('POST'));{
+         $titre=$request->get('titre');
+         $produits=$em->getRepository("GestionProjetBundle:Produits")->findProduitsBytitre($titre);// afficher par titre
+        
+           
+       
+       } 
+       return $this->render('GestionProjetBundle:Default:rechercheArticle.html.twig', array(
+                    'produits'=>$produits,
+        ));
+       
+       
 }
+       
+}
+

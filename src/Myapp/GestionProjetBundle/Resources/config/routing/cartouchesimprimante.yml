@@ -1,0 +1,29 @@
+cartouchesimprimante_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Cartouchesimprimante:index" }
+    methods:  GET
+
+cartouchesimprimante_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Cartouchesimprimante:show" }
+    methods:  GET
+
+cartouchesimprimante_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Cartouchesimprimante:new" }
+    methods:  [GET, POST]
+
+cartouchesimprimante_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Cartouchesimprimante:edit" }
+    methods:  [GET, POST]
+
+cartouchesimprimante_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Cartouchesimprimante:delete" }
+    methods:  DELETE
+
+
+cartouchesimprimante_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Cartouchesimprimante:modifier" } 

@@ -1,0 +1,50 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>fourniture du bureau list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Tva</th>
+                <th>Disponible</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+     {% for fournituredubureau in fournituredubureaus %}
+            <tr>
+                <td><a href="{{ path('fournituredubureau_show', { 'id': fournituredubureau.id }) }}">{{ fournituredubureau.id }}</a></td>
+                <td>{{ fournituredubureau.titre }}</td>
+                <td>{{ fournituredubureau.description }}</td>
+                <td>{{ fournituredubureau.prix }}</td>
+                 <td>{{ fournituredubureau.tva }}</td>
+                <td>{% if fournituredubureau.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+                <td>  <img src="{{asset('uploads/'~fournituredubureau.path)}}" alt="DevAndClick" width="300" height="300"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('fournituredubureau_show', { 'id':fournituredubureau.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('fournituredubureau_edit', { 'id':fournituredubureau.id }) }}" class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('fournituredubureau_new') }}" class="btn btn-success">Ajout d'un nouveaux fournituredubureau</a>
+        </li>
+    </ul>
+{% endblock %}
+

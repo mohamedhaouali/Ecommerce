@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+               
+                {% include '::modulesUsed/navigationscanner.html.twig' %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}
+                {% else %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}
+                {% endif %}
+                {{ render(controller('GestionProjetBundle:Panier:menu')) }}
+            </div>
+   
+  <div class="span9">
+                
+                    <ul class="thumbnails">
+                       {% for scanner in scanners %}
+                            <li class="span3">
+                                <div class="thumbnail">
+                                    <img src="{{asset('uploads/'~scanner.path)}}" alt="DevAndClick" width="300" height="300">
+
+                                    <div class="caption">
+                                        <h4>{{scanner.titre}}</h4>
+
+                                        <p>{{scanner.description}}</p>
+                                        <p>Prix : {{scanner.prix}}DT</p>
+                                        <p>{% if scanner.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</p>
+                                        
+<a class="btn btn-primary" href="{{ path('produit_recherche') }}">Plus d'infos</a>
+                                      
+
+                                    </div>
+                                </div>
+                            </li>
+                        {%endfor%}
+                    </ul>
+                    <div class="navigation">
+    {{ knp_pagination_render(scanners) }}
+</div> 
+                </div>   
+
+
+          
+
+        </div>
+       
+                    
+    </div>
+
+</div>
+
+
+{% endblock %}
+        
+            
+               
+            
+
+
+
+

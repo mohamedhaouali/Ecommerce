@@ -1,0 +1,28 @@
+imprimante_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Imprimante:index" }
+    methods:  GET
+
+imprimante_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Imprimante:show" }
+    methods:  GET
+
+imprimante_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Imprimante:new" }
+    methods:  [GET, POST]
+
+imprimante_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Imprimante:edit" }
+    methods:  [GET, POST]
+
+imprimante_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Imprimante:delete" }
+    methods:  DELETE
+    
+imprimante_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Imprimante:modifier" }     

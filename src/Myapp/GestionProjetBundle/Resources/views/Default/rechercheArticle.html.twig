@@ -1,0 +1,90 @@
+{% extends '::base.html.twig'%}
+
+{% block body %}
+
+  
+    
+      <div class="container">
+        <div class="row">
+
+            <div class="span3">
+                {% include '::modulesUsed/navigation.html.twig' %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}
+                {% else %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}
+                {% endif %}
+                {{ render(controller('GestionProjetBundle:Panier:menu')) }}
+            </div>
+        
+ <div class="span9">
+ 
+ <form method="POST">
+            
+   Titre <input type="text" name="titre">
+            
+ <input type="submit" name="sumbit" class="btn btn-info" value="recherche">
+            
+            
+            
+ </form> 
+     
+     
+<div class="span9"> 
+    {% if produits|length != 0 %}
+   <ul class="thumbnails">      
+         
+       {% for produit in produits %}
+            <li class="span3">
+     
+    
+     <div class="thumbnail">
+           
+          <p><img src="{{asset('uploads/'~produit.path)}}" alt="DevAndClick" width="300" height="300"></p>
+          
+            <div class="caption">
+          
+                <h4>{{ produit.titre|upper }}</h4>
+                 <p>{{produit.description}}</p>
+           
+                 <p>Prix : {{produit.prix}} DT</p>
+                 
+                <p> {% if produit.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</p>          
+                
+        
+            
+                               <a class="btn btn-primary" href="{{ path('presentation_page', { 'id' : produit.id }) }}">Plus d'infos</a>
+                                        {% if panier[produit.id] is not defined %}
+                                            <a class="btn btn-success" href="{{ path('ajouter-panier', { 'id' :  produit.id }) }}">Ajouter au panier</a>
+                                            
+                              {% endif %}               
+                                            
+                                          </div>
+                                </div>
+                            </li>
+                        {%endfor%}
+                    </ul>
+                  
+                </div>   
+
+
+            {% else %}
+                Aucun Produit
+            {% endif %}
+
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}                                    
+     
+
+
+
+
+         
+         
+         
+         

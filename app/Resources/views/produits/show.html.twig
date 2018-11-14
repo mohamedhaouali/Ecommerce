@@ -25,6 +25,11 @@
                 <th>Disponible</th>
                 <td>{% if produit.disponible %}Yes{% else %}No{% endif %}</td>
             </tr>
+            
+              <tr>
+                <th>Tva</th>
+                <td>{{ produit.tva }}</td>
+            </tr>
         </tbody>
     </table>
 

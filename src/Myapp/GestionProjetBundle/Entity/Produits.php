@@ -39,15 +39,7 @@ class Produits
      *
      * @ORM\Column(name="titre", type="string", length=255)
      * 
-     *@Assert\NotBlank(message="entrer votre titre.", groups={"Registration", "Profile"})
-     * @Assert\Length(
-     *     min=3,
-     *     max=255,
-     *     minMessage="Le titre est trop court.",
-                           
-     *     maxMessage="Le titre est trop  long.",
-     *     
-     * )
+     *
      */
     private $titre;
 
@@ -56,16 +48,7 @@ class Produits
      *
      * @ORM\Column(name="description", type="text")
      * 
-     * 
-     * @Assert\NotBlank(message="entrer votre description.", groups={"Registration", "Profile"})
-     * @Assert\Length(
-     *     min=3,
-     *     max=255,
-     *     minMessage="La description est trop court.",
-                           
-     *     maxMessage="La description est trop  long.",
-     *     
-     * )
+     *
      */
     private $description;
 
@@ -82,6 +65,15 @@ class Produits
      * @ORM\Column(name="disponible", type="boolean")
      */
     private $disponible;
+    
+    /**
+     *
+     * @ORM\ManyToOne(targetEntity="Myapp\GestionProjetBundle\Entity\Categories",cascade={"persist"} )
+     * @ORM\JoinColumn(name="categorie_id",referencedColumnName="id")
+     *
+     */
+    private $categories;
+    
 
  /**
      * @Assert\File(maxSize="6000000")
@@ -331,5 +323,29 @@ class Produits
     public function getPath()
     {
         return $this->path;
+    }
+
+    /**
+     * Set categories
+     *
+     * @param \Myapp\GestionProjetBundle\Entity\Categories $categories
+     *
+     * @return Produits
+     */
+    public function setCategories(\Myapp\GestionProjetBundle\Entity\Categories $categories = null)
+    {
+        $this->categories = $categories;
+
+        return $this;
+    }
+
+    /**
+     * Get categories
+     *
+     * @return \Myapp\GestionProjetBundle\Entity\Categories
+     */
+    public function getCategories()
+    {
+        return $this->categories;
     }
 }

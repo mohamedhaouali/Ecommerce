@@ -1,0 +1,51 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>cartouches imprimante list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Tva</th>
+                <th>Disponible</th>
+              
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+     {% for cd in cds %}
+            <tr>
+                <td><a href="{{ path('cd_show', { 'id': cd.id }) }}">{{ cd.id }}</a></td>
+                <td>{{ cd.titre }}</td>
+                <td>{{ cd.description }}</td>
+                <td>{{ cd.prix }}</td>
+                <td>{{ cd.tva }}</td>
+                <td>{% if cd.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+                <td>  <img src="{{asset('uploads/'~cd.path)}}" alt="DevAndClick" width="300" height="300"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('cd_show', { 'id':cd.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('cd_edit', { 'id':cd.id }) }}" class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cd_new') }}" class="btn btn-success">Ajout d'un nouveaux Cd</a>
+        </li>
+    </ul>
+{% endblock %}
+

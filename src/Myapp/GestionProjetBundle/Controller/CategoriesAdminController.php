@@ -33,7 +33,7 @@ class CategoriesAdminController extends Controller
      */
     public function newAction(Request $request)
     {
-        $category = new Category();
+        $category = new Categories();
         $form = $this->createForm('Myapp\GestionProjetBundle\Form\CategoriesType', $category);
         $form->handleRequest($request);
 

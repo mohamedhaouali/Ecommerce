@@ -1,0 +1,28 @@
+disquedurexterne_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:DisqueDurExterne:index" }
+    methods:  GET
+
+disquedurexterne_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:DisqueDurExterne:show" }
+    methods:  GET
+
+disquedurexterne_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:DisqueDurExterne:new" }
+    methods:  [GET, POST]
+
+disquedurexterne_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:DisqueDurExterne:edit" }
+    methods:  [GET, POST]
+
+disquedurexterne_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:DisqueDurExterne:delete" }
+    methods:  DELETE
+
+disquedurexterne_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:DisqueDurExterne:modifier" } 

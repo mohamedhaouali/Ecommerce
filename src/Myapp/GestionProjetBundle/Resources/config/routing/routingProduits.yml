@@ -15,3 +15,10 @@ rechercheProduits:
     path:  /recherche
     defaults: { _controller: GestionProjetBundle:Produits:rechercheTraitement } 
  
+produit_recherche:
+    path:     /recherche1
+    defaults: { _controller: "GestionProjetBundle:Produits:recherche1" }  
+    
+produit_recherche1:
+    path:     /recherche2
+    defaults: { _controller: "GestionProjetBundle:Produits:recherche2" }     

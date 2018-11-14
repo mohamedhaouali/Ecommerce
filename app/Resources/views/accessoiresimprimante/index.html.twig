@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                {% include '::modulesUsed/navigationaccessoiresimprimante.html.twig' %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}
+                {% else %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}
+                {% endif %}
+                {{ render(controller('GestionProjetBundle:Panier:menu')) }}
+            </div>
+   
+  <div class="span9">
+                
+                    <ul class="thumbnails">
+                    {% for accessoiresimprimante in accessoiresimprimantes %}
+                            <li class="span3">
+                                <div class="thumbnail">
+                                    <img src="{{asset('uploads/'~accessoiresimprimante.path)}}" alt="DevAndClick" width="300" height="300">
+
+                                    <div class="caption">
+                                        <h4>{{accessoiresimprimante.titre}}</h4>
+
+                                        <p>{{accessoiresimprimante.description}}</p>
+                                        <p>Prix : {{accessoiresimprimante.prix}}DT</p>
+                                        <p>{% if accessoiresimprimante.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</p>
+     <a class="btn btn-primary" href="{{ path('produit_recherche') }}">Plus d'infos</a>                                   
+
+                                      
+
+                                    </div>
+                                </div>
+                            </li>
+                        {%endfor%}
+                    </ul>
+                                       <div class="navigation">
+    {{ knp_pagination_render(accessoiresimprimantes) }}
+</div>  
+                    
+                    
+                </div>   
+
+
+          
+
+        </div>
+            
+                    
+    </div>
+
+</div>
+
+
+{% endblock %}
+        
+            
+               
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

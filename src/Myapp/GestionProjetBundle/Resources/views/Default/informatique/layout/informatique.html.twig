@@ -1,0 +1,60 @@
+{% extends '::base.html.twig'%}
+
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+
+            <div class="span3">
+                {% include '::modulesUsed/navigation.html.twig' %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}
+                {% else %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}
+                {% endif %}
+                {{ render(controller('GestionProjetBundle:Panier:menu')) }}
+            </div>
+
+            <div class="span9">
+                {% if informatiques |length != 0 %}
+                    <ul class="thumbnails">
+                        {% for informatique in informatiques %}
+                            <li class="span3">
+                                <div class="thumbnail">
+                                    <img src="{{asset('uploads/'~informatique.path)}}" alt="DevAndClick" width="300" height="300">
+
+                                    <div class="caption">
+                                        <h4>{{informatique.titre}}</h4>
+
+                                        <p>{{informatique.description}}</p>
+                                        <p>Prix : {{informatique.prix}}DT</p>
+                                        <p>Disponible:{informatique{.disponible}}</p>
+                                        <a class="btn btn-primary" href="{{ path('presentation_page', { 'id' : informatique.id }) }}">Plus d'infos</a>
+                                        {% if panier[informatique.id] is not defined %}
+                                            <a class="btn btn-success" href="{{ path('ajouter-panier', { 'id' : informatique .id }) }}">Ajouter au panier</a>
+
+                                        {% endif %}
+
+                                    </div>
+                                </div>
+                            </li>
+                        {%endfor%}
+                    </ul>
+                    <div class="navigation">
+                        {{ knp_pagination_render(informatique) }}
+                    </div>
+                </div>   
+
+
+            {% else %}
+                Aucun informatique
+            {% endif %}
+
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

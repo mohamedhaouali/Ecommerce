@@ -1,0 +1,28 @@
+stockage_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Stockage:index" }
+    methods:  GET
+
+stockage_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Stockage:show" }
+    methods:  GET
+
+stockage_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Stockage:new" }
+    methods:  [GET, POST]
+
+stockage_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Stockage:edit" }
+    methods:  [GET, POST]
+
+stockage_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Stockage:delete" }
+    methods:  DELETE
+
+stockage_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Stockage:modifier" } 

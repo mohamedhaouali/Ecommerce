@@ -1,0 +1,28 @@
+accessoirestelephone_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:AccessoiresTelephone:index" }
+    methods:  GET
+
+accessoirestelephone_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:AccessoiresTelephone:show" }
+    methods:  GET
+
+accessoirestelephone_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:AccessoiresTelephone:new" }
+    methods:  [GET, POST]
+
+accessoirestelephone_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:AccessoiresTelephone:edit" }
+    methods:  [GET, POST]
+
+accessoirestelephone_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:AccessoiresTelephone:delete" }
+    methods:  DELETE
+
+accessoirestelephone_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:AccessoiresTelephone:modifier" } 

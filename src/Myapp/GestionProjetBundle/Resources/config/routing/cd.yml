@@ -1,0 +1,28 @@
+cd_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Cd:index" }
+    methods:  GET
+
+cd_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Cd:show" }
+    methods:  GET
+
+cd_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Cd:new" }
+    methods:  [GET, POST]
+
+cd_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Cd:edit" }
+    methods:  [GET, POST]
+
+cd_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Cd:delete" }
+    methods:  DELETE
+
+cd_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Cd:modifier" }

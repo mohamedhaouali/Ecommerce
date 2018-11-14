@@ -10,7 +10,9 @@
                 <th>Titre</th>
                 <th>Description</th>
                 <th>Prix</th>
+                <th>Tva</th>
                 <th>Disponible</th>
+                <th>Image</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -21,7 +23,9 @@
                 <td>{{ produit.titre }}</td>
                 <td>{{ produit.description }}</td>
                 <td>{{ produit.prix }}</td>
-                <td>{% if produit.disponible %}Yes{% else %}No{% endif %}</td>
+                <td>{{ produit.tva }}</td>
+                <td>{% if produit.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+                <td><img src="{{asset('uploads/'~produit.path)}}" alt="DevAndClick" width="300" height="300"></td>
                 <td>
                     <ul>
                         <li>

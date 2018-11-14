@@ -3,9 +3,146 @@
     <div class="well">
         <ul class="nav nav-list">
             <li>
-                <a href="{{ path('adminProduits_index') }}">Produits</a>
+                <a href="{{ path('adminProduits_modifier') }}">Produits</a>
             </li>
           
+                <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Informatique</span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{ path('stockage_modifier') }}">Stockage</a>
+                                                
+                                                <a href="{{ path('ordinateurportable_modifier') }}">Ordinateur portable</a>
+                                                
+                                                <a href="{{ path('ordinateurdebureau_modifier') }}">Ordinateur de bureau</a>
+                                                
+                                                <a href="{{ path('sac_modifier') }}">Sac Scolaires et trousses</a>
+                                                 
+                                                <a href="{{ path('composantinformatique_modifier') }}">Composant informatique</a>
+                                                 
+                                                <a href="{{ path('tablette_modifier') }}">Tablette</a>
+                                              
+                                                <a href="{{ path('disquedurexterne_modifier') }}">DisquedurExterne</a> 
+                                               
+                                                <a href="{{ path('cartememoire_modifier') }}">Carte memoire</a>
+                                                
+                                                  <a href="{{ path('cd_modifier') }}">Cd</a>
+                                              
+                                              
+                                              
+                                            </li>
+
+                                           
+
+                                        </ul>  <!-- end of /.dropdown-menu -->
+                                    </li> <!-- end of /.dropdown -->
+                 <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Telephone</span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{ path('appareilfax_modifier') }}">Appareil Fax</a>
+                                            </li>
+
+                                             <li>
+                                           <a href="{{ path('telephonefixe_modifier') }}">Telephone Fixe</a>
+                                           
+                                            </li>
+                                            
+                                            <li>
+                                              <a href="{{ path('accessoirestelephone_modifier') }}">Accessoires telephone</a>
+                                                  
+                                            </li>      
+
+                                        </ul>  <!-- end of /.dropdown-menu -->
+                                    </li> <!-- end of /.dropdown -->
+            
+                 <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Impression</span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{ path('imprimante_modifier') }}">Imprimante</a>
+                                            </li>
+                                            
+                                                  <li>
+                                                <a href="{{ path('cartouchesimprimante_modifier') }}">Cartouches imprimante</a>
+                                            </li>
+                                            
+                                            <li>
+                                                <a href="{{ path('accessoiresimprimante_modifier') }}">Accessoiresimprimante</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="{{ path('photocopieur_modifier') }}">Photocopieurs</a>
+                                            </li>
+                                            
+                                               <li>
+                                                <a href="{{ path('scanner_modifier') }}">Scanner</a>
+                                            </li>
+                                         
+                                            
+                                            
+
+                                        </ul>  <!-- end of /.dropdown-menu -->
+                                    </li> <!-- end of /.dropdown -->   
+              <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Resaux et securite</span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{ path('onduleur_modifier') }}">Onduleurs</a>
+                                            </li>
+                                           
+                                            
+                                               <li>
+                                                <a href="{{ path('resaux_modifier') }}">Resaux</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="{{ path('logiciels_modifier') }}">logiciels</a>
+                                            </li>
+                                            
+                                               <li>
+                                                <a href="{{ path('videosurveillance_modifier') }}">Videos Surveillance</a>
+                                            </li>
+
+                                        </ul>  <!-- end of /.dropdown-menu -->
+                                    </li> <!-- end of /.dropdown -->                             
+                                    
+                               <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Bureautique</span></a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a href="{{ path('photocopieur_modifier') }}">Photocopieurs</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="{{ path('papier_modifier') }}">Papier</a>
+                                            </li>
+                                            
+                                               <li>
+                                                <a href="{{ path('classementetarchivage_modifier') }}">Classement et Archivage</a>
+                                            </li>
+                                            
+                                             <li>
+                                                <a href="{{ path('fournituredubureau_modifier') }}">Fourniture du bureaux</a>
+                                            </li>
+                                            
+                                             <li>
+                                                <a href="{{ path('tableaux_modifier') }}">Tableaux</a>
+                                               </li>          
+
+                                        </ul>  <!-- end of /.dropdown-menu -->
+                                    </li> <!-- end of /.dropdown -->                   
+              
+                                          <li>
+                                                <a href="{{ path('destockage_modifier') }}">Destockage</a>
+                                            </li>
+                    
+                </ul>                      
+            
+       
+            
+            
+           
         </ul>
     </div>
 
@@ -17,6 +154,12 @@
            <li>
                 <a href="{{ path('adminCommande') }}">Commandes</a>
             </li>
+            
+            <li>
+                <a href="{{ path('adminCategories_index') }}">Categories</a>
+            </li>
+            
+           
          <li>
                 <a href="{{ path('stockentree_index') }}">StockEntree</a>
             </li>

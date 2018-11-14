@@ -8,6 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 
 class StockEntreeType extends AbstractType
 {
@@ -20,6 +21,8 @@ class StockEntreeType extends AbstractType
                 ->add('quantite', MoneyType::class,array('required'=>true, 'attr'=> array('placeholder'=>'prix du produit')))
                 ->add('prix', MoneyType::class,array('required'=>true, 'attr'=> array('placeholder'=>'prix du produit')))
                 ->add('date', DateType::class);
+               
+           
     }/**
      * {@inheritdoc}
      */

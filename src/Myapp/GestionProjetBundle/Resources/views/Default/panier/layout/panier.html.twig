@@ -56,11 +56,11 @@
                      
                         <td>{{ produit.prix }}DT</td>
                         <td>{{ produit.prix * panier[produit.id]}}DT</td>
-                        <td>{{ produit.prix  | tva(produit.tva.multiplcate)-0.09 }}DT</td>
+                        <td>{{ produit.prix  | tva(produit.tva.multiplcate) }}DT</td>
                     </tr>
                 </form>
                 {% set totalHT=totalHT+produit.prix * panier[produit.id]  %}
-                {% set totalTTC=totalTTC+ produit.prix|tva(produit.tva.multiplcate) * panier[produit.id]-0.09 %}
+                {% set totalTTC=totalTTC+ produit.prix|tva(produit.tva.multiplcate) * panier[produit.id] %}
                 {% set netapayer=totalTTC+ 0.60 %}
                 {% set refTva = refTva|merge({ ('%' ~ produit.tva.valeur) : refTva['%' ~ produit.tva.valeur] + ( produit.prix * panier[produit.id])|montantTva(produit.tva.multiplcate) }) %}
 

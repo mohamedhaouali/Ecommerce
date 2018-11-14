@@ -1,0 +1,49 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>telephone Fixes list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Tva</th>
+                <th>Disponible</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+      {% for telephoneFixe in telephoneFixes %}
+            <tr>
+                <td><a href="{{ path('telephonefixe_show', { 'id': telephoneFixe.id }) }}">{{ telephoneFixe.id }}</a></td>
+                <td>{{ telephoneFixe.titre }}</td>
+                <td>{{ telephoneFixe.description }}</td>
+                <td>{{ telephoneFixe.prix }}</td>
+                <td>{{ telephoneFixe.tva }}</td>
+                <td>{% if telephoneFixe.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+                <td>  <img src="{{asset('uploads/'~telephoneFixe.path)}}" alt="DevAndClick" width="300" height="300"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('telephonefixe_show', { 'id':telephoneFixe.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('telephonefixe_edit', { 'id':telephoneFixe.id }) }}" class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('telephonefixe_new') }}" class="btn btn-success">Ajout d'un nouveaux telephone fixe</a>
+        </li>
+    </ul>
+{% endblock %}

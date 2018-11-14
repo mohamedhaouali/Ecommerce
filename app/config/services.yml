@@ -1,3 +1,8 @@
-
-
+services:
+    app_user_registration_listener:
+        class: Myapp\GestionProjetBundle\EventListener\RegistrationListener
+        arguments: []
+        tags:
+            - { name: Kernel.event_subscriber }
+ 
  

@@ -1,0 +1,50 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>tableaux list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Tva</th>
+                <th>Disponible</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+      {% for tableaux in tableauxes %}
+            <tr>
+                <td><a href="{{ path('appareilfax_show', { 'id': tableaux.id }) }}">{{ tableaux.id }}</a></td>
+                <td>{{ tableaux.titre }}</td>
+                <td>{{ tableaux.description }}</td>
+                <td>{{ tableaux.prix }}</td>
+                <td>{{ tableaux.tva }}</td>
+              
+                <td>{% if tableaux.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+                <td>  <img src="{{asset('uploads/'~tableaux.path)}}" alt="DevAndClick" width="300" height="300"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tableaux_show', { 'id':tableaux.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tableaux_edit', { 'id':tableaux.id }) }}" class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tableaux_new') }}" class="btn btn-success">Ajout d'un nouveaux tableaux</a>
+        </li>
+    </ul>
+{% endblock %}

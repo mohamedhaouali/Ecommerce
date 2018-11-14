@@ -5,9 +5,9 @@ namespace  MedBac\UtilisateursBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MedBac\UtilisateursBundle\Repository\UtilisateursRepository")
  * @ORM\Table(name="utilisateurs")
  */
 class Utilisateurs extends BaseUser
@@ -41,4 +41,87 @@ class Utilisateurs extends BaseUser
     */
    private $adresses;
     
+ /**
+     * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank(message="Please enter your name.", groups={"Registration", "Profile"})
+     * @Assert\Length(
+     *     min=3,
+     *     max=255,
+     *     minMessage="The name is too short.",
+     *     maxMessage="The name is too long.",
+     *     groups={"Registration", "Profile"}
+     * )
+     */
+    protected $name;
+    
+    
+    
+    /**
+     * Add commande
+     *
+     * @param \Myapp\GestionProjetBundle\Entity\Commande $commande
+     *
+     * @return Utilisateurs
+     */
+    public function addCommande(\Myapp\GestionProjetBundle\Entity\Commande $commande)
+    {
+        $this->commandes[] = $commande;
+
+        return $this;
+    }
+
+    /**
+     * Remove commande
+     *
+     * @param \Myapp\GestionProjetBundle\Entity\Commande $commande
+     */
+    public function removeCommande(\Myapp\GestionProjetBundle\Entity\Commande $commande)
+    {
+        $this->commandes->removeElement($commande);
+    }
+
+    /**
+     * Get commandes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommandes()
+    {
+        return $this->commandes;
+    }
+
+    /**
+     * Add adress
+     *
+     * @param \Myapp\GestionProjetBundle\Entity\UtilisateursAdress $adress
+     *
+     * @return Utilisateurs
+     */
+    public function addAdress(\Myapp\GestionProjetBundle\Entity\UtilisateursAdress $adress)
+    {
+        $this->adresses[] = $adress;
+
+        return $this;
+    }
+
+    /**
+     * Remove adress
+     *
+     * @param \Myapp\GestionProjetBundle\Entity\UtilisateursAdress $adress
+     */
+    public function removeAdress(\Myapp\GestionProjetBundle\Entity\UtilisateursAdress $adress)
+    {
+        $this->adresses->removeElement($adress);
+    }
+
+    /**
+     * Get adresses
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAdresses()
+    {
+        return $this->adresses;
+    }
 }

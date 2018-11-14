@@ -1,0 +1,28 @@
+ordinateurdebureau_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Ordinateurdebureau:index" }
+    methods:  GET
+
+ordinateurdebureau_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Ordinateurdebureau:show" }
+    methods:  GET
+
+ordinateurdebureau_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Ordinateurdebureau:new" }
+    methods:  [GET, POST]
+
+ordinateurdebureau_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Ordinateurdebureau:edit" }
+    methods:  [GET, POST]
+
+ordinateurdebureau_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Ordinateurdebureau:delete" }
+    methods:  DELETE
+
+ordinateurdebureau_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Ordinateurdebureau:modifier" } 

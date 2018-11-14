@@ -1,0 +1,50 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Stockage</h1>
+
+    <table class="table table-striped table-hover">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ stockage.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ stockage.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ stockage.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ stockage.prix }}</td>
+            </tr>
+            <tr>
+                <th>Disponible</th>
+                <td>{% if stockage.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+            </tr>
+            
+              <tr>
+                <th>Tva</th>
+                <td>{{ stockage.tva }}</td>
+            </tr>
+       
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('stockage_modifier') }}"class="btn btn-info">Retour a la page Modifier</a>
+        </li>
+        <li>
+            <a href="{{ path('stockage_edit', { 'id': stockage.id }) }}" class="btn btn-success">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+               <input type="submit"  class="btn btn-danger" value="Supprimer" />
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

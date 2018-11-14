@@ -1,0 +1,49 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Resaux</h1>
+
+   <table class="table table-striped table-hover">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ resaux.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ resaux.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ resaux.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ resaux.prix }}</td>
+            </tr>
+            <tr>
+                <th>Disponible</th>
+                <td>{% if resaux.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+            </tr>
+            
+            <tr>
+                <th>Disponible</th>
+                <td>{{ resaux.tva}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('resaux_modifier') }}" class="btn btn-info">Retour a la page Modifier</a>
+        </li>
+        <li>
+            <a href="{{ path('resaux_edit', { 'id': resaux.id }) }}" class="btn btn-success">Modifier</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+               <input type="submit"  class="btn btn-danger" value="Supprimer" />
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

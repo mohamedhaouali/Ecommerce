@@ -1,0 +1,28 @@
+logiciels_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:logiciels:index" }
+    methods:  GET
+
+logiciels_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:logiciels:show" }
+    methods:  GET
+
+logiciels_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:logiciels:new" }
+    methods:  [GET, POST]
+
+logiciels_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:logiciels:edit" }
+    methods:  [GET, POST]
+
+logiciels_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:logiciels:delete" }
+    methods:  DELETE
+
+logiciels_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:logiciels:modifier" }    

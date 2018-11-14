@@ -1,0 +1,73 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>disqueDurExterne list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Tva</th>
+                <th>Disponible</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+       {% for disqueDurExterne in disqueDurExternes %}
+            <tr>
+                <td><a href="{{ path('disquedurexterne_show', { 'id': disqueDurExterne.id }) }}">{{ disqueDurExterne.id }}</a></td>
+                <td>{{ disqueDurExterne.titre }}</td>
+                <td>{{ disqueDurExterne.description }}</td>
+                <td>{{ disqueDurExterne.prix }}</td>
+                <td>{{ disqueDurExterne.tva }}</td>
+                <td>{% if disqueDurExterne.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+                <td>  <img src="{{asset('uploads/'~disqueDurExterne.path)}}" alt="DevAndClick" width="300" height="300"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('disquedurexterne_show', { 'id': disqueDurExterne.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('disquedurexterne_edit', { 'id': disqueDurExterne.id }) }}" class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('disquedurexterne_new') }}" class="btn btn-success">Ajout d'un nouveaux disque dur Externe</a>
+        </li>
+    </ul>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>cartouches imprimante list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Tva</th>
+                <th>Disponible</th>
+              
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+     {% for cartouchesimprimante in cartouchesimprimantes %}
+            <tr>
+                <td><a href="{{ path('cartouchesimprimante_show', { 'id': cartouchesimprimante.id }) }}">{{ cartouchesimprimante.id }}</a></td>
+                <td>{{ cartouchesimprimante.titre }}</td>
+                <td>{{ cartouchesimprimante.description }}</td>
+                <td>{{ cartouchesimprimante.prix }}</td>
+                <td>{{ cartouchesimprimante.tva }}</td>
+                <td>{% if cartouchesimprimante.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+                <td>  <img src="{{asset('uploads/'~cartouchesimprimante.path)}}" alt="DevAndClick" width="300" height="300"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('cartouchesimprimante_show', { 'id':cartouchesimprimante.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('cartouchesimprimante_edit', { 'id':cartouchesimprimante.id }) }}" class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('cartouchesimprimante_new') }}" class="btn btn-success">Ajout d'un nouveaux Cartouches imprimante</a>
+        </li>
+    </ul>
+{% endblock %}
+

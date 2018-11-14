@@ -1,0 +1,50 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>appareil Fax list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Tva</th>
+                <th>Disponible</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for appareilFax in appareilFaxes %}
+            <tr>
+                <td><a href="{{ path('appareilfax_show', { 'id': appareilFax.id }) }}">{{ appareilFax.id }}</a></td>
+                <td>{{ appareilFax.titre }}</td>
+                <td>{{ appareilFax.description }}</td>
+                <td>{{ appareilFax.prix }}</td>
+                <td>{{ appareilFax.tva }}</td>
+              
+                <td>{% if appareilFax.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+                <td>  <img src="{{asset('uploads/'~appareilFax.path)}}" alt="DevAndClick" width="300" height="300"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('appareilfax_show', { 'id':appareilFax.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('appareilfax_edit', { 'id':appareilFax.id }) }}" class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('appareilfax_new') }}" class="btn btn-success">Ajout d'un nouveaux appareilFax</a>
+        </li>
+    </ul>
+{% endblock %}

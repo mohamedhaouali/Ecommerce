@@ -1,0 +1,49 @@
+{% extends '::layout/layoutAdmin.html.twig' %}
+
+{% block body %}
+    <h1>Resaux list</h1>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Tva</th>
+                <th>Disponible</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+      {% for resaux in resauxes %}
+            <tr>
+                <td><a href="{{ path('resaux_show', { 'id': resaux.id }) }}">{{ resaux.id }}</a></td>
+                <td>{{ resaux.titre }}</td>
+                <td>{{ resaux.description }}</td>
+                <td>{{ resaux.prix }}</td>  
+                <td>{{ resaux.tva}}</td>
+                <td>{% if resaux.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</td>
+                <td>  <img src="{{asset('uploads/'~resaux.path)}}" alt="DevAndClick" width="300" height="300"></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('resaux_show', { 'id':resaux.id }) }}" class="btn btn-info"><i class="icon-book"></i>Afficher</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('resaux_edit', { 'id':resaux.id }) }}" class="btn btn-danger"><i class="icon-edit"></i>edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('resaux_new') }}" class="btn btn-success">Ajout d'un nouveaux resaux</a>
+        </li>
+    </ul>
+{% endblock %}

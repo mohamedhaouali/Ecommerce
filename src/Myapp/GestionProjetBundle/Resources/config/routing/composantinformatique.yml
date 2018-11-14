@@ -1,0 +1,28 @@
+composantinformatique_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Composantinformatique:index" }
+    methods:  GET
+
+composantinformatique_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Composantinformatique:show" }
+    methods:  GET
+
+composantinformatique_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Composantinformatique:new" }
+    methods:  [GET, POST]
+
+composantinformatique_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Composantinformatique:edit" }
+    methods:  [GET, POST]
+
+composantinformatique_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Composantinformatique:delete" }
+    methods:  DELETE
+
+composantinformatique_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Composantinformatique:modifier" }

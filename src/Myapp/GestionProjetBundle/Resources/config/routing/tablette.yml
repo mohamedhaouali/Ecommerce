@@ -1,0 +1,28 @@
+tablette_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Tablette:index" }
+    methods:  GET
+
+tablette_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Tablette:show" }
+    methods:  GET
+
+tablette_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Tablette:new" }
+    methods:  [GET, POST]
+
+tablette_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Tablette:edit" }
+    methods:  [GET, POST]
+
+tablette_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Tablette:delete" }
+    methods:  DELETE
+
+tablette_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Tablette:modifier" } 

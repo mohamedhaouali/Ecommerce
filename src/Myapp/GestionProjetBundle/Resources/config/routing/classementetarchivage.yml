@@ -1,0 +1,28 @@
+classementetarchivage_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:classementetarchivage:index" }
+    methods:  GET
+
+classementetarchivage_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:classementetarchivage:show" }
+    methods:  GET
+
+classementetarchivage_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:classementetarchivage:new" }
+    methods:  [GET, POST]
+
+classementetarchivage_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:classementetarchivage:edit" }
+    methods:  [GET, POST]
+
+classementetarchivage_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:classementetarchivage:delete" }
+    methods:  DELETE
+
+classementetarchivage_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:classementetarchivage:modifier" }

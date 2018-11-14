@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                {% include '::modulesUsed/navigation.html.twig' %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}
+                {% else %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}
+                {% endif %}
+                {{ render(controller('GestionProjetBundle:Panier:menu')) }}
+            </div>
+   
+  <div class="span9">
+                
+                    <ul class="thumbnails">
+                {% for tableaux in tableauxes %}
+                            <li class="span3">
+                                <div class="thumbnail">
+                                    <img src="{{asset('uploads/'~tableaux.path)}}" alt="DevAndClick" width="300" height="300">
+
+                                    <div class="caption">
+                                        <h4>{{tableaux.titre}}</h4>
+
+                                        <p>{{tableaux.description}}</p>
+                                        <p>Prix : {{tableaux.prix}}DT</p>
+                                        <p>{% if tableaux.disponible %}<font color="green">Disponible</font>{% else %}<font color="red">Epuise</font>{% endif %}</p>
+        <a class="btn btn-primary" href="{{ path('produit_recherche') }}">Plus d'infos</a>                               
+
+                                      
+
+                                    </div>
+                                </div>
+                            </li>
+                        {%endfor%}
+                    </ul>
+                       <div class="navigation">
+    {{ knp_pagination_render(tableauxes) }}
+</div>  
+                </div>   
+
+
+   
+
+        </div>
+                    
+ 
+    </div>
+
+</div>
+
+
+{% endblock %}
+        
+            
+               
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

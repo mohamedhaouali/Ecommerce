@@ -48,6 +48,22 @@ class ProduitsRepository extends \Doctrine\ORM\EntityRepository
             ->orderBy('u.id')
             ->setParameter('chaine', $chaine);
         return $qb->getQuery()->getResult();
-    }  
+    }
     
+    
+       public function findProduitsBytitre($titre){
+     // query builder routing: recherche1
+           
+    $query = $this->createQueryBuilder('a')
+    ->where('a.titre like :titre')
+    ->setParameter('titre', $titre.'%')
+    ->orderBy('a.titre', 'ASC')
+    ->getQuery();
+
+     return  $query->getResult();
+          
+          
+          
+          
+} 
 }

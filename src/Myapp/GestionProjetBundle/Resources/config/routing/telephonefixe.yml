@@ -1,0 +1,28 @@
+telephonefixe_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:TelephoneFixe:index" }
+    methods:  GET
+
+telephonefixe_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:TelephoneFixe:show" }
+    methods:  GET
+
+telephonefixe_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:TelephoneFixe:new" }
+    methods:  [GET, POST]
+
+telephonefixe_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:TelephoneFixe:edit" }
+    methods:  [GET, POST]
+
+telephonefixe_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:TelephoneFixe:delete" }
+    methods:  DELETE
+
+telephonefixe_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:TelephoneFixe:modifier" } 

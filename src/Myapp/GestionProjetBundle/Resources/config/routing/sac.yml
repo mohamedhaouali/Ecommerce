@@ -1,0 +1,28 @@
+sac_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Sac:index" }
+    methods:  GET
+
+sac_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Sac:show" }
+    methods:  GET
+
+sac_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Sac:new" }
+    methods:  [GET, POST]
+
+sac_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Sac:edit" }
+    methods:  [GET, POST]
+
+sac_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Sac:delete" }
+    methods:  DELETE
+
+sac_modifier:
+    path:     /modifier
+    defaults: { _controller: "GestionProjetBundle:Sac:modifier" } 

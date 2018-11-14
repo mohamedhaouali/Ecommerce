@@ -14,7 +14,7 @@ class TvaExtension extends \Twig_Extension
     
    function calculTva($prixHT,$tva)
    {
-   return round($prixHT / $tva,2);
+   return round($prixHT / $tva,3);
    
 }
 

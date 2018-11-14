@@ -26,6 +26,12 @@ routingAdmin:
     resource: "@GestionProjetBundle/Resources/config/routing/routingAdmin.yml"
     prefix: /admin  
     
-
+categorie_affiche:
+    path:     /categorie/{categorie}
+    defaults: { _controller: GestionProjetBundle:Produits:categorie }  
     
-  
+   
+    
+Scanner:
+    resource: "@GestionProjetBundle/Resources/config/routing/scanner.yml"
+    prefix:   /scanner     
