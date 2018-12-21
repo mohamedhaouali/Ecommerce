@@ -28,7 +28,7 @@ class ComposantinformatiqueController extends Controller
         
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
-                $composantinformatiques, $request->query->get('page', 1)/* page number */, 20/* limit per page */
+                $composantinformatiques, $request->query->get('page', 1)/* page number */, 10/* limit per page */
         );
         
         

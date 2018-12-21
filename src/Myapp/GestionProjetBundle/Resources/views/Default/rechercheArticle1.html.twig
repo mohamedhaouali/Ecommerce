@@ -1,4 +1,4 @@
-{% extends '::base.html.twig'%}
+{% extends '::layout/layoutAdmin.html.twig' %}
 
 {% block body %}
 
@@ -7,21 +7,13 @@
       <div class="container">
         <div class="row">
 
-            <div class="span3">
-                {% include '::modulesUsed/navigation.html.twig' %}
-                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}
-                {% else %}
-                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}
-                {% endif %}
-                {{ render(controller('GestionProjetBundle:Panier:menu')) }}
-            </div>
+       
         
  <div class="span9">
  
  <form method="POST">
             
- Description <input type="text" name="decription">
+   Titre <input type="text" name="titre">
             
  <input type="submit" name="sumbit" class="btn btn-info" value="recherche">
             
@@ -80,6 +72,14 @@
 
 {% endblock %}                                    
      
+
+
+
+
+         
+         
+         
+         
 
 
 

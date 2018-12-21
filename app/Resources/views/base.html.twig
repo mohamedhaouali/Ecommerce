@@ -13,6 +13,8 @@
         
         
         {% endblock %}
+        
+    <link rel="icon" type="image/x-icon" href="{{asset('img/logo1.png')}}" />     
        
     </head>
     <body>
@@ -35,6 +37,11 @@
                     <li>
                        <a href="{{path('produit_recherche')}}">Recherche</a>
                     </li>
+                    
+                    <li>
+                       <a href="{{path('produit_recherche1')}}">Recherche description</a>
+                    </li>
+                    
                     
                      <li>
                          <a href="{{path('panier')}}">Panier</a>
@@ -133,9 +140,7 @@
                                         </ul>  <!-- end of /.dropdown-menu -->
                                     </li> <!-- end of /.dropdown -->                   
               
-                     <li>
-                         <a href="{{path('destockage_index')}}">Destockage</a>
-                    </li>
+                     
                                
 
                     

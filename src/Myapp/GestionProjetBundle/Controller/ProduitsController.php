@@ -106,6 +106,27 @@ $produits =  $this->get('knp_paginator')->paginate(
        
        
 }
+
+ public function recherche2Action(Request $request)
+        
+            {
+       $em = $this->getDoctrine()->getManager();
+       $produits=$em->getRepository("GestionProjetBundle:Produits")->findAll();// afficher tous les modeles
+       if($request->isMethod('POST'));{
+         $description=$request->get('description');
+         $produits=$em->getRepository("GestionProjetBundle:Produits")->findProduitsBydescription($description);// afficher par description
+        
+           
+       
+       } 
+       return $this->render('GestionProjetBundle:Default:rechercheArticle3.html.twig', array(
+                    'produits'=>$produits,
+        ));
+       
+       
+}
+
+
        
 }
 

@@ -86,7 +86,7 @@ class CartememoireController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager();
+            $em = $this->getDoctrine()->getManager();
             $cartememoire->upload();
             $em->flush();
             

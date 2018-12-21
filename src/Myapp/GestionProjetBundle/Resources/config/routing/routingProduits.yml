@@ -21,4 +21,4 @@ produit_recherche:
     
 produit_recherche1:
     path:     /recherche2
-    defaults: { _controller: "GestionProjetBundle:Produits:recherche2" }     
+    defaults: { _controller: "GestionProjetBundle:Produits:recherche2" }    

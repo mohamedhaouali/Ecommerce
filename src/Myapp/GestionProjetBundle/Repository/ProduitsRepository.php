@@ -66,4 +66,22 @@ class ProduitsRepository extends \Doctrine\ORM\EntityRepository
           
           
 } 
+
+      public function findProduitsBydescription($description){
+     // query builder routing: recherche1
+           
+    $query = $this->createQueryBuilder('b')
+    ->where('b.description like :description')
+    ->setParameter('description', $description.'%')
+    ->orderBy('b.description', 'ASC')
+    ->getQuery();
+
+     return  $query->getResult();
+          
+          
+          
+          
+} 
+
+
 }

@@ -139,6 +139,29 @@ class ProduitsAdminController extends Controller
         return $this->render('GestionProjetBundle:Administration:Produits/layout/modifier.html.twig', array(
                     'produits' => $produits,
         ));    } 
+        
+        
+    public function recherche1Action(Request $request)
+        
+            {
+       $em = $this->getDoctrine()->getManager();
+       $produits=$em->getRepository("GestionProjetBundle:Produits")->findAll();// afficher tous les modeles
+       if($request->isMethod('POST'));{
+         $titre=$request->get('titre');
+         $produits=$em->getRepository("GestionProjetBundle:Produits")->findProduitsBytitre($titre);// afficher par titre
+        
+           
+       
+       } 
+       return $this->render('GestionProjetBundle:Default:rechercheArticle1.html.twig', array(
+                    'produits'=>$produits,
+        ));
+       
+       
+}     
+        
+        
+      
     
     
 }

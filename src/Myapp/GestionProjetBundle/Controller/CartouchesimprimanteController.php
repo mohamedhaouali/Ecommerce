@@ -31,7 +31,7 @@ class CartouchesimprimanteController extends Controller
         
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
-        $cartouchesimprimantes, $request->query->get('page', 1)/* page number */, 20/* limit per page */
+        $cartouchesimprimantes, $request->query->get('page', 1)/* page number */, 30/* limit per page */
         );
 
         return $this->render('cartouchesimprimante/index.html.twig', array(

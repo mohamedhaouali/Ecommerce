@@ -26,3 +26,7 @@ adminProduits_delete:
 adminProduits_modifier:
     path:     /modifier
     defaults: { _controller: "GestionProjetBundle:ProduitsAdmin:modifier" } 
+    
+adminProduits_recherche4:
+    path:     /recherche5
+    defaults: { _controller: "GestionProjetBundle:ProduitsAdmin:recherche1" }      
