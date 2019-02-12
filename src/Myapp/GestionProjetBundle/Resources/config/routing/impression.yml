@@ -1,0 +1,24 @@
+impression_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Impression:index" }
+    methods:  GET
+
+impression_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Impression:show" }
+    methods:  GET
+
+impression_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Impression:new" }
+    methods:  [GET, POST]
+
+impression_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Impression:edit" }
+    methods:  [GET, POST]
+
+impression_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Impression:delete" }
+    methods:  DELETE

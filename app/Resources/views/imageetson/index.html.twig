@@ -1,0 +1,55 @@
+{% extends '::base.html.twig'%}
+
+{% block body %}
+    
+      <div class="container">
+        <div class="row">
+            <div class="span3">
+                {% include '::modulesUsed/navigation.html.twig' %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}
+                {% else %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}
+                {% endif %}
+                {{ render(controller('GestionProjetBundle:Panier:menu')) }}
+            </div>
+       
+      <div class="span9">
+                
+                    <ul class="thumbnails">
+                       {% for imageetson in imageetsons %}
+                            <li class="span3">
+                                <div class="thumbnail">
+                                    <img src="{{asset('uploads/'~imageetson.path)}}" alt="DevAndClick" width="300" height="300">
+
+                                    <div class="caption">
+                                        <h4>{{imageetson.titre}}</h4>
+
+                                        <p>{{imageetson.description}}</p>
+                                        <p>Prix : {{imageetson.prix}}DT</p>
+                                        <p>Disponible:{{imageetson.disponible}}</p>
+                                        
+
+                                      
+
+                                    </div>
+                                </div>
+                            </li>
+                        {%endfor%}
+                    </ul>
+                 
+                </div>   
+
+
+          
+
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+    
+    
+   

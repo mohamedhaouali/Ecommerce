@@ -1,0 +1,24 @@
+admininformatique_index:
+    path:     /
+    defaults: { _controller: "GestionProjetBundle:Informatique:index" }
+    methods:  GET
+
+admininformatique_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionProjetBundle:Informatique:show" }
+    methods:  GET
+
+admininformatique_new:
+    path:     /new
+    defaults: { _controller: "GestionProjetBundle:Informatique:new" }
+    methods:  [GET, POST]
+
+admininformatique_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionProjetBundle:Informatique:edit" }
+    methods:  [GET, POST]
+
+admininformatique_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionProjetBundle:Informatique:delete" }
+    methods:  DELETE

@@ -1,0 +1,20 @@
+gestion_projet_homepage1:
+    path:     /
+    defaults: { _controller: GestionProjetBundle:Informatique:informatique }
+
+presentation_page1:
+    path:     /produits/{id}
+    defaults: { _controller: GestionProjetBundle:Informatique:presentation } 
+    
+
+categorie_affiche:
+    path:     /categorie/{categorie}
+    defaults: { _controller: GestionProjetBundle:Informatique:produits }    
+       
+rechercheProduits1:
+    path:  /recherche
+    defaults: { _controller: GestionProjetBundle:Informatique:rechercheTraitement } 
+ 
+produit_recherche1:
+    path:     /recherche1
+    defaults: { _controller: "GestionProjetBundle:Informatique:recherche1" }  

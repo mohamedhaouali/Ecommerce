@@ -1,0 +1,55 @@
+{% extends '::base.html.twig'%}
+
+{% block body %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="span3">
+                {% include '::modulesUsed/navigation.html.twig' %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}
+                {% else %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}
+                {% endif %}
+                {{ render(controller('GestionProjetBundle:Panier:menu')) }}
+            </div>
+       
+      <div class="span9">
+                
+                    <ul class="thumbnails">
+                      {% for bureautique in bureautiques %}
+                            <li class="span3">
+                                <div class="thumbnail">
+                                    <img src="{{asset('uploads/'~bureautique.path)}}" alt="DevAndClick" width="300" height="300">
+
+                                    <div class="caption">
+                                        <h4>{{bureautique.titre}}</h4>
+
+                                        <p>{{bureautique.description}}</p>
+                                        <p>Prix : {{bureautique.prix}}DT</p>
+                                        <p>Disponible:{{bureautique.disponible}}</p>
+                                        
+
+                                      
+
+                                    </div>
+                                </div>
+                            </li>
+                        {%endfor%}
+                    </ul>
+                 
+                </div>   
+
+
+          
+
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+        
+            
+    
