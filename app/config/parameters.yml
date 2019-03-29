@@ -1,0 +1,19 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: micro
+    database_user: root
+    database_password: null
+    mailer_transport: gmail
+    mailer_host: 127.0.0.1
+    mailer_user: microsystemeinformations@gmail.com
+    mailer_password: warcommander
+    secret: ThisTokenIsNotSoSecretChangeIt
+twig:
+    globals:
+        telephone: '79 391 088'
+        fax: '79 391 056'
+        facebook: 'M.F: 000/M/A/772508S'
+        adresse: '48 Rue Omar Ibn Abi Rabiaaa 2013 Ben Arous'
+        cpville: ' Ben Arous'
