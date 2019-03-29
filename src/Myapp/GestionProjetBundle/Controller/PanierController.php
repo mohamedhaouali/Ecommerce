@@ -61,11 +61,13 @@ class PanierController extends Controller
             $session->set('panier', array());
             $session->getFlashBag()->add('success', " Article ajouté avec succès");
         }
+          //$panier[id du produit]=>Quantite  du produit
+         //on recupere la variable et on le stocke dans (panier)
              $panier = $session->get('panier');
 
-
+       //key exists si l'utilisateur prend 2 fois le meme produit il faut just remplacer la quantite
         if (array_key_exists($id, $panier)) {
-
+          // le produit n'existe pas    
             if ($request->query->get('qte') != null){
                 $panier[$id] = $request->query->get('qte');
                 $session->getFlashBag()->add('success', " Quantité modifié avec succès");
@@ -80,7 +82,7 @@ class PanierController extends Controller
                 $session->getFlashBag()->add('success', " Article ajouté avec succès");
             }
         }
-
+ // mettre a jour le panier,on la resete dans la session panier
             $session->set('panier',$panier);
 
          return $this->redirectToRoute('panier');

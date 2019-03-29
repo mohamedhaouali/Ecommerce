@@ -38,7 +38,7 @@ class ProduitsController extends Controller
   $produits =  $this->get('knp_paginator')->paginate(
             $findProduits, /* query NOT result */
             $request->query->getInt('page', 1)/*page number*/,
-           20/*limit per page*/
+           10/*limit per page*/
         );
       
     

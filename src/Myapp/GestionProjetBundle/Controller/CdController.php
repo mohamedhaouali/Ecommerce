@@ -27,7 +27,7 @@ class CdController extends Controller
         
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
-        $cds, $request->query->get('page', 1)/* page number */, 20/* limit per page */
+        $cds, $request->query->get('page', 1)/* page number */, 10/* limit per page */
         );
         
 

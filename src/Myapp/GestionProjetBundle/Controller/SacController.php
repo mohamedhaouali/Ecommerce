@@ -33,7 +33,7 @@ class SacController extends Controller
         
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
-        $sacs, $request->query->get('page', 1)/* page number */, 20/* limit per page */
+        $sacs, $request->query->get('page', 1)/* page number */, 10/* limit per page */
         );
 
         return $this->render('sac/index.html.twig', array(

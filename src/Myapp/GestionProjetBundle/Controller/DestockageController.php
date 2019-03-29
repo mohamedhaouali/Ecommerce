@@ -31,7 +31,7 @@ class DestockageController extends Controller
         
         $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
-        $destockages, $request->query->get('page', 1)/* page number */, 20/* limit per page */
+        $destockages, $request->query->get('page', 1)/* page number */, 10/* limit per page */
         );
 
         return $this->render('destockage/index.html.twig', array(

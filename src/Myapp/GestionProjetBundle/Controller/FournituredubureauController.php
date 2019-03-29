@@ -28,7 +28,7 @@ class FournituredubureauController extends Controller
         
                 $paginator = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
-                $fournituredubureaus, $request->query->get('page', 1)/* page number */, 20/* limit per page */
+                $fournituredubureaus, $request->query->get('page', 1)/* page number */, 10/* limit per page */
         );
 
         return $this->render('fournituredubureau/index.html.twig', array(

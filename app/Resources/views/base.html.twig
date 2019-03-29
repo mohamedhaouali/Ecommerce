@@ -3,22 +3,22 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Wib{% endblock %}</title>
-         <meta name="keywords" content="{% block motsCles %}{% endblock %}" />
-         <meta name="description" content="{% block description %}{% endblock %}" />
+        <meta name="keywords" content="{% block motsCles %}{% endblock %}" />
+        <meta name="description" content="{% block description %}{% endblock %}" />
         {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" />
-        <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.css')}}" />
-        <link rel="stylesheet" href="{{ asset('css/style.css')}}" />
-        <link rel="stylesheet" href="{{ asset('css/font-awesome.css')}}" />
-        
-        
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" />
+            <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.css')}}" />
+            <link rel="stylesheet" href="{{ asset('css/style.css')}}" />
+            <link rel="stylesheet" href="{{ asset('css/font-awesome.css')}}" />
+
+
         {% endblock %}
-        
-    <link rel="icon" type="image/x-icon" href="{{asset('img/logo1.png')}}" />     
-       
+
+        <link rel="icon" type="image/x-icon" href="{{asset('img/logo1.png')}}" />     
+
     </head>
     <body>
-           <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-inner">
                 <div class="container">
                     <button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">
@@ -26,206 +26,156 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                         <ul class="nav navbar-nav">
-                       <li>       
-                      <img src="{{asset('img/logo.png')}}" >  
-                       </li>
-                    <li>
-                        <a href="{{path('gestion_projet_homepage')}}">Accueil</a>
-                    </li>
-                   
-                    <li>
-                       <a href="{{path('produit_recherche')}}">Recherche</a>
-                    </li>
-                    
-                    <li>
-                       <a href="{{path('produit_recherche1')}}">Recherche description</a>
-                    </li>
-                    
-                    
-                     <li>
-                         <a href="{{path('panier')}}">Panier</a>
-                    </li>
-                    
-                     <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Informatique</span></a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="{{ path('stockage_index') }}">Stockage</a>
-                                            </li>
-                                            
-                                              <li>
-                                                <a href="{{ path('ordinateurportable_index') }}">Ordinateur portable</a>
-                                            </li>
-                                            
-                                               <li>
-                                                <a href="{{ path('ordinateurdebureau_index') }}">Ordinateur de bureau</a>
-                                            </li>
-                                            
-                                            
-                                            <li>
-                                                <a href="{{ path('sac_index') }}">Sac Scolaires et trousses</a>
-                                            </li>
-                                            
-                                          
-                                            
-                                             <li>
-                                                <a href="{{ path('composantinformatique_index') }}">Composent informatique</a>
-                                            </li>
-                                            
-                                            <li>
-                                                <a href="{{ path('tablette_index') }}">Tablette</a>
-                                            </li>  
-                                           
-
-                                        </ul>  <!-- end of /.dropdown-menu -->
-                                    </li> <!-- end of /.dropdown -->
-                    
-               
-                                    
-                               <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Impression</span></a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="{{ path('imprimante_index') }}">Imprimante</a>
-                                            </li>
-                                               
-                                              <li>
-                                                <a href="{{ path('cartouchesimprimante_index') }}">Consommables</a>
-                                            </li>
-                                            
-                                             <li>
-                     
-                                                <a href="{{ path('accessoiresimprimante_index') }}"> Accessoires Imprimantes</a>
-                                            </li>
-                                            
-                                            
-                                           
-                                            
-                                            <li>
-                                                <a href="{{ path('photocopieur_index') }}">Photocopieurs</a>
-                                            </li>
-                                            
-                                               <li>
-                                                <a href="{{ path('scanner_index') }}">Scanner</a>
-                                            </li>
-
-                                        </ul>  <!-- end of /.dropdown-menu -->
-                                    </li> <!-- end of /.dropdown -->    
-                        
-                                    
-                               <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Bureautique</span></a>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a href="{{ path('photocopieur_index') }}">Photocopieurs</a>
-                                            </li>
-
-                                            <li>
-                                                <a href="{{ path('papier_index') }}">Papier</a>
-                                            </li>
-                                            
-                                               <li>
-                                                <a href="{{ path('classementetarchivage_index') }}">Classement et Archivage</a>
-                                            </li>
-                                            
-                                            <li>
-                                                <a href="{{ path('fournituredubureau_index') }}">Fourniture du bureau</a>
-                                            </li>
-                                            
-                                            <li>
-                                                <a href="{{ path('tableaux_index') }}">Tableaux</a>
-                                            </li>
-
-                                        </ul>  <!-- end of /.dropdown-menu -->
-                                    </li> <!-- end of /.dropdown -->                   
-              
-                     
-                               
-
-                    
-                </ul>
-             
-           
-
-              <div class="nav-collapse collapse">
-                <div class="navbar-text pull-right">
-                     |
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                        <a href="{{ path('fos_user_security_logout') }}">
-                            {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                        </a>
-                    {% else %}
-                        <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-                    {% endif %}
-
-                </div> 
-                    
-                         <div class="navbar-text pull-right">  
+                    <ul class="nav navbar-nav">
+                        <li>       
+                            <img src="{{asset('img/logo.png')}}" >  
+                        </li>
+                        <li>
+                            <a href="{{path('gestion_projet_homepage')}}">Accueil</a>
+                        </li>
 
 
 
 
-                        <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans([],'FOSUserBundle') }}</a>   
+                        <li>
+                            <a href="{{path('panier')}}">Panier</a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>Informatique</span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ path('stockage_index') }}">Stockage</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ path('ordinateurportable_index') }}">Ordinateur portable</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ path('ordinateurdebureau_index') }}">Ordinateur de bureau</a>
+                                </li>
+
+
+                                <li>
+                                    <a href="{{ path('sac_index') }}">Sac Scolaires et trousses</a>
+                                </li>
+
+
+
+                                <li>
+                                    <a href="{{ path('composantinformatique_index') }}">Composent informatique</a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ path('tablette_index') }}">Tablette</a>
+                                </li>  
+
+
+                            </ul>  <!-- end of /.dropdown-menu -->
+                        </li> <!-- end of /.dropdown -->
+
+
+
+   
+
+
+                  
+                    </ul>
+
+
+
+                    <div class="nav-collapse collapse">
+                        <div class="navbar-text pull-right">
+                            |
+                            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                                <a href="{{ path('fos_user_security_logout') }}">
+                                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                                </a>
+                            {% else %}
+                                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                            {% endif %}
+
+                        </div> 
+
+                        <div class="navbar-text pull-right">  
+
+
+                            <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans([],'FOSUserBundle') }}</a>   
 
 
 
 
 
-                        </ul>
 
 
+                            </ul>
+
+
+
+                        </div>
+
+                
 
                     </div>
-                       </div>
+                            
+                       <form class="navbar-form navbar-right" method="POST" action="{{path('produit_recherche')}}">
+
+                            Destination : <input type="text" name="titre" class="form-control" placeholder="Search..." name="motcle">
+
+                            <button type="submit" class="btn">Rechercher</button>
+
+
+
+                        </form>               
                 </div>
             </div>
         </div>    
-        
-        
+
+
         {% block body %}
-        
+
         {% endblock %}
-        
-        
+
+
         {% block javascripts %}
-   <script src="{{ asset('js/jquery-1.10.0.min.js')}}"></script>
-<script src="{{ asset('js/bootstrap.js')}}"></script> 
-<script src="{{ asset('js/main.js')}}"></script>
-<script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
-<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
-        
+            <script src="{{ asset('js/jquery-1.10.0.min.js')}}"></script>
+            <script src="{{ asset('js/bootstrap.js')}}"></script> 
+            <script src="{{ asset('js/main.js')}}"></script>
+            <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+            <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+
         {% endblock %}
-        
-<footer id="footer" class="vspace20">
-    <div class="container">
-        <div class="row">
-           
 
-            <div class="span4">
-                <h4>Adresse</h4>
-                <p><i class="icon-map-marker"></i> {{ adresse }}</p>
-            </div>
+        <footer id="footer" class="vspace20">
+            <div class="container">
+                <div class="row">
 
-            <div class="span2">
-                <h4>Nous contacter</h4>
-                <p><i class="icon-phone"></i>&nbsp;Tel: {{ telephone }}</p>
-                <p><i class="icon-print"></i>&nbsp;Fax: {{ fax }}</p>
-            </div>
-        </div>
 
-     
+                    <div class="span4">
+                        <h4>Adresse</h4>
+                        <p><i class="icon-map-marker"></i> {{ adresse }}</p>
+                    </div>
+
+                    <div class="span2">
+                        <h4>Nous contacter</h4>
+                        <p><i class="icon-phone"></i>&nbsp;Tel: {{ telephone }}</p>
+                        <p><i class="icon-print"></i>&nbsp;Fax: {{ fax }}</p>
+                    </div>
+                </div>
+
+
                 <div class="row">
                     <div class="span4">
-                        
+
                         <p> @ <a href="http://www.microsysteme.tn/">{{ "now"|date('Y') }}  All Rights Reserved. Designed by MicroSystem Solutions</a></p>
                     </div>
                 </div>
-    </div>
-</footer>      
-        
-        
-        
+            </div>
+        </footer>      
+
+
+
     </body>
 </html>
